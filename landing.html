@@ -1642,27 +1642,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
         }
 
         .exit-intent-container {
             position: relative;
-            background: linear-gradient(135deg, #f27979 0%, #f39b8d 100%);
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            background: linear-gradient(135deg, #c2e2cc 0%, #d4ead8 100%);
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(43, 127, 133, 0.2);
+            max-width: 520px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
-            animation: slideInUp 0.4s ease-out;
+            animation: slideInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 10000;
         }
 
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -1672,13 +1672,13 @@
 
         .exit-intent-close {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            background: rgba(255, 255, 255, 0.9);
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             font-size: 1.5rem;
             cursor: pointer;
             display: flex;
@@ -1687,174 +1687,144 @@
             color: #2b7f85;
             transition: all 0.3s ease;
             z-index: 10001;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .exit-intent-close:hover {
             background: #ffffff;
             transform: rotate(90deg);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .exit-intent-content {
-            padding: 40px 32px;
-            color: #ffffff;
+            padding: 48px 36px;
+            color: #1a1a1a;
             text-align: center;
         }
 
+        .exit-intent-header {
+            margin-bottom: 28px;
+        }
+
         .exit-intent-title {
-            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
             font-weight: 700;
-            color: #ffffff;
+            color: #2b7f85;
             margin-bottom: 8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.5px;
         }
 
         .exit-intent-subtitle {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
+            color: #2b7f85;
+            opacity: 0.85;
+            letter-spacing: 0.3px;
+        }
+
+        .exit-intent-main {
+            margin-bottom: 32px;
         }
 
         .exit-intent-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 16px;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .exit-intent-description strong {
-            color: #2b7f85;
-            font-weight: 600;
-        }
-
-        .exit-intent-highlight {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin: 16px 0 12px;
-        }
-
-        .exit-intent-benefits {
-            list-style: none;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 16px 20px;
-            border-radius: 8px;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #1a1a1a;
             margin-bottom: 24px;
-            font-size: 0.9rem;
-            line-height: 1.8;
+            font-weight: 400;
         }
 
-        .exit-intent-benefits li {
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 8px;
+        .exit-intent-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+        }
+
+        .feature-icon {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .exit-intent-benefits li:before {
-            content: "✓";
-            color: #2b7f85;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: #2b7f85;
+            color: #ffffff;
+            border-radius: 50%;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
         }
 
-        .exit-intent-benefits li:last-child {
-            margin-bottom: 0;
-        }
-
-        .exit-intent-whatsapp-group {
-            margin: 24px 0;
-        }
-
-        .exit-intent-group-label {
+        .feature-text {
             font-size: 0.9rem;
-            font-weight: 600;
-            color: #ffffff;
+            color: #1a1a1a;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .exit-intent-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .whatsapp-buttons {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        @media (min-width: 480px) {
-            .whatsapp-buttons {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-        }
-
-        .whatsapp-btn {
+        .exit-intent-btn {
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 14px 16px;
-            background: #ffffff;
-            color: #2b7f85;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            white-space: nowrap;
         }
 
-        .whatsapp-btn:hover:not(.whatsapp-btn-disabled) {
+        .exit-intent-btn-primary {
             background: #2b7f85;
             color: #ffffff;
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.25);
+        }
+
+        .exit-intent-btn-primary:hover {
+            background: #1f5a62;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 28px rgba(43, 127, 133, 0.35);
         }
 
-        .whatsapp-btn:active:not(.whatsapp-btn-disabled) {
-            transform: translateY(0);
+        .exit-intent-btn-secondary {
+            background: rgba(242, 121, 121, 0.9);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(242, 121, 121, 0.2);
         }
 
-        .whatsapp-btn-disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .whatsapp-btn-disabled:hover {
-            background: #ffffff;
-            color: #2b7f85;
-            transform: none;
-        }
-
-        .whatsapp-icon {
-            font-size: 1.2rem;
-            display: inline-block;
-        }
-
-        .whatsapp-text {
-            display: inline;
-            font-size: 0.85rem;
+        .exit-intent-btn-secondary:hover {
+            background: #f27979;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(242, 121, 121, 0.3);
         }
 
         .exit-intent-skip {
             display: block;
             width: 100%;
-            padding: 14px 16px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 12px 16px;
+            background: transparent;
+            color: #2b7f85;
+            border: none;
             border-radius: 10px;
             font-weight: 500;
             font-size: 0.9rem;
@@ -1864,8 +1834,8 @@
         }
 
         .exit-intent-skip:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.4);
+            color: #1f5a62;
         }
 
         .exit-intent-skip:active {
@@ -1876,30 +1846,137 @@
         @media (max-width: 480px) {
             .exit-intent-container {
                 width: 95%;
-                border-radius: 12px;
+                border-radius: 16px;
             }
 
             .exit-intent-content {
-                padding: 32px 20px;
+                padding: 36px 24px;
             }
 
             .exit-intent-title {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
+            }
+
+            .exit-intent-subtitle {
+                font-size: 0.95rem;
             }
 
             .exit-intent-description {
                 font-size: 0.9rem;
-                padding: 14px;
             }
 
-            .whatsapp-btn {
-                padding: 12px 14px;
-                font-size: 0.8rem;
+            .exit-intent-btn {
+                padding: 14px 20px;
+                font-size: 0.9rem;
             }
 
-            .exit-intent-skip {
-                padding: 12px 14px;
+            .feature-item {
+                padding: 10px;
+            }
+
+            .feature-text {
                 font-size: 0.85rem;
+            }
+        }
+
+        /* FLOATING HELP BUTTON */
+        .floating-help-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 8000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .help-btn-main {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2b7f85 0%, #1f5a62 100%);
+            color: #ffffff;
+            border: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(43, 127, 133, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .help-btn-main:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(43, 127, 133, 0.4);
+        }
+
+        .help-btn-main:active {
+            transform: scale(0.95);
+        }
+
+        .help-menu {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: slideInUp 0.3s ease-out;
+        }
+
+        .help-menu.show {
+            display: flex;
+        }
+
+        .help-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .help-option:hover {
+            background: #f8f6f4;
+            transform: translateX(-4px);
+        }
+
+        .help-option-icon {
+            font-size: 1.3rem;
+            display: inline-block;
+        }
+
+        .help-option-text {
+            display: inline;
+        }
+
+        @media (max-width: 480px) {
+            .floating-help-button {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .help-btn-main {
+                width: 48px;
+                height: 48px;
+                font-size: 1.5rem;
+            }
+
+            .help-menu {
+                right: -8px;
             }
         }
 
@@ -2360,52 +2437,62 @@
             <button id="closeExitModal" class="exit-intent-close">✕</button>
 
             <div class="exit-intent-content">
-                <h2 class="exit-intent-title">¡Espera un momento!</h2>
-                <p class="exit-intent-subtitle">Únete a nuestra comunidad VIP</p>
+                <div class="exit-intent-header">
+                    <h2 class="exit-intent-title">Antes de irte...</h2>
+                    <p class="exit-intent-subtitle">Acceso a comunidad + acompañamiento Aurora</p>
+                </div>
 
-                <p class="exit-intent-description">
-                    En nuestros <strong>grupos privados de WhatsApp</strong>, encontrarás una comunidad de estudiantes y profesores que se acompañan en el camino hacia el mejor EFIP.
-                </p>
+                <div class="exit-intent-main">
+                    <p class="exit-intent-description">
+                        Conecta con miles de estudiantes que ya aprobaron EFIP. Metodología Aurora, grupo privado de tu carrera, y apoyo de profes en tiempo real.
+                    </p>
 
-                <p class="exit-intent-highlight">
-                    Aquí recibirás:
-                </p>
-
-                <ul class="exit-intent-benefits">
-                    <li>Acompañamiento personalizado</li>
-                    <li>Resolución de dudas en tiempo real</li>
-                    <li>Comunidad de estudiantes como tú</li>
-                    <li>Tips y actualizaciones del EFIP</li>
-                </ul>
-
-                <div class="exit-intent-whatsapp-group">
-                    <p class="exit-intent-group-label">Elige tu grupo:</p>
-
-                    <div class="whatsapp-buttons">
-                        <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-                            <span class="whatsapp-icon">💬</span>
-                            <span class="whatsapp-text">Derecho EFIP 1</span>
-                        </a>
-
-                        <a href="https://chat.whatsapp.com/CIZYT39vcu44apa7cnUemS" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-                            <span class="whatsapp-icon">💬</span>
-                            <span class="whatsapp-text">Derecho EFIP 2</span>
-                        </a>
-
-                        <a href="#" class="whatsapp-btn whatsapp-btn-disabled" title="Próximamente disponible">
-                            <span class="whatsapp-icon">💬</span>
-                            <span class="whatsapp-text">Contabilidad EFIP</span>
-                        </a>
-
-                        <a href="#" class="whatsapp-btn whatsapp-btn-disabled" title="Próximamente disponible">
-                            <span class="whatsapp-icon">💬</span>
-                            <span class="whatsapp-text">Lic. Administración</span>
-                        </a>
+                    <div class="exit-intent-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Comunidad activa de tu carrera</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Metodología Aurora comprobada</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Resolución de dudas en vivo</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Acompañamiento personalizado</span>
+                        </div>
                     </div>
                 </div>
 
-                <button id="skipExitModal" class="exit-intent-skip">Continuar sin unirme</button>
+                <div class="exit-intent-actions">
+                    <button id="openCommunityModal" class="exit-intent-btn exit-intent-btn-primary">
+                        Sumate a la comunidad
+                    </button>
+                    <a href="https://wa.me/542634621570?text=Hola%20Estudiantes%20Digitales,%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="exit-intent-btn exit-intent-btn-secondary">
+                        Consultar directamente
+                    </a>
+                </div>
+
+                <button id="skipExitModal" class="exit-intent-skip">No, gracias</button>
             </div>
+        </div>
+    </div>
+
+    <!-- FLOATING HELP BUTTON -->
+    <div id="floatingHelpButton" class="floating-help-button">
+        <button id="helpBtnToggle" class="help-btn-main">?</button>
+        <div class="help-menu" id="helpMenu">
+            <a href="https://wa.me/542634621570?text=Hola%20Estudiantes%20Digitales,%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="help-option">
+                <span class="help-option-icon">💬</span>
+                <span class="help-option-text">Consultar</span>
+            </a>
+            <button id="helpCommunityBtn" class="help-option">
+                <span class="help-option-icon">👥</span>
+                <span class="help-option-text">Comunidad</span>
+            </button>
         </div>
     </div>
 
@@ -2676,41 +2763,126 @@
             });
         });
 
-        // EXIT INTENT MODAL
+        // EXIT INTENT MODAL - MULTIPLE TRIGGERS
         const exitIntentModal = document.getElementById('exitIntentModal');
         const closeExitModal = document.getElementById('closeExitModal');
         const skipExitModal = document.getElementById('skipExitModal');
+        const openCommunityModal = document.getElementById('openCommunityModal');
         let exitIntentShown = false;
+        let scrollTriggered = false;
+        let timeTriggered = false;
+        let idleTriggered = false;
+        let mouseExitTriggered = false;
 
+        function showExitIntentModal() {
+            if (!exitIntentShown) {
+                exitIntentModal.classList.add('show');
+                exitIntentShown = true;
+                fbq('track', 'ViewContent', {
+                    content_name: 'Exit Intent Modal Shown',
+                    content_type: 'modal'
+                });
+            }
+        }
+
+        // Close modal handlers
         closeExitModal.addEventListener('click', () => {
             exitIntentModal.classList.remove('show');
-            exitIntentShown = true;
         });
 
         skipExitModal.addEventListener('click', () => {
             exitIntentModal.classList.remove('show');
-            exitIntentShown = true;
+        });
+
+        openCommunityModal.addEventListener('click', () => {
+            exitIntentModal.classList.remove('show');
+            // Scroll to community section
+            setTimeout(() => {
+                const voteSection = document.querySelector('.vote-section');
+                if (voteSection) {
+                    voteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 300);
         });
 
         exitIntentModal.addEventListener('click', (e) => {
             if (e.target === exitIntentModal || e.target.classList.contains('exit-intent-overlay')) {
                 exitIntentModal.classList.remove('show');
-                exitIntentShown = true;
             }
         });
 
-        document.addEventListener('mouseout', (e) => {
-            if (!exitIntentShown && e.clientY < 0) {
-                exitIntentModal.classList.add('show');
-                exitIntentShown = true;
-            }
-        });
-
-        window.addEventListener('beforeunload', (e) => {
+        // TRIGGER 1: Time-based (20 seconds)
+        setTimeout(() => {
             if (!exitIntentShown) {
-                exitIntentModal.classList.add('show');
-                exitIntentShown = true;
-                e.preventDefault();
+                timeTriggered = true;
+                showExitIntentModal();
+            }
+        }, 20000);
+
+        // TRIGGER 2: Scroll-based (50%)
+        window.addEventListener('scroll', () => {
+            if (!scrollTriggered && !exitIntentShown) {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent >= 50) {
+                    scrollTriggered = true;
+                    showExitIntentModal();
+                }
+            }
+        });
+
+        // TRIGGER 3: Mouse exit (only desktop, when mouse leaves top)
+        document.addEventListener('mouseleave', (e) => {
+            if (!mouseExitTriggered && !exitIntentShown && e.clientY <= 0) {
+                mouseExitTriggered = true;
+                showExitIntentModal();
+            }
+        });
+
+        // TRIGGER 4: Inactivity (30 seconds without interaction)
+        let inactivityTimer;
+        let lastActivity = Date.now();
+
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            lastActivity = Date.now();
+
+            inactivityTimer = setTimeout(() => {
+                if (!idleTriggered && !exitIntentShown) {
+                    const inactiveTime = Date.now() - lastActivity;
+                    if (inactiveTime >= 30000) {
+                        idleTriggered = true;
+                        showExitIntentModal();
+                    }
+                }
+            }, 30000);
+        }
+
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keydown', resetInactivityTimer);
+        document.addEventListener('click', resetInactivityTimer);
+        document.addEventListener('touchstart', resetInactivityTimer);
+
+        resetInactivityTimer();
+
+        // FLOATING HELP BUTTON
+        const floatingHelpButton = document.getElementById('floatingHelpButton');
+        const helpBtnToggle = document.getElementById('helpBtnToggle');
+        const helpMenu = document.getElementById('helpMenu');
+        const helpCommunityBtn = document.getElementById('helpCommunityBtn');
+
+        helpBtnToggle.addEventListener('click', () => {
+            helpMenu.classList.toggle('show');
+        });
+
+        helpCommunityBtn.addEventListener('click', () => {
+            showExitIntentModal();
+            helpMenu.classList.remove('show');
+        });
+
+        // Close help menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!floatingHelpButton.contains(e.target)) {
+                helpMenu.classList.remove('show');
             }
         });
 
