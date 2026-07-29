@@ -230,33 +230,57 @@
             padding: 3rem 1.5rem;
             text-align: center;
             position: relative;
-            background: linear-gradient(135deg, #f8f6f4 0%, #ffffff 100%);
-            background-image:
-                linear-gradient(rgba(248, 246, 244, 0.85), rgba(255, 255, 255, 0.9)),
-                url('./assets/images/fundadora.png');
+            background: linear-gradient(
+                to bottom,
+                #f8f6f4 0%,
+                #f8f6f4 35%,
+                rgba(255, 255, 255, 0) 100%
+              ),
+              linear-gradient(to right, #c2e2cc, #2b7f85);
             background-size: cover;
             background-position: center right;
             background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(90deg, rgba(255,255,255, 0.2) 1px, transparent 1px);
+            background-size: 50px 100%;
+            pointer-events: none;
+            mask-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 1) 0%,
+              rgba(0, 0, 0, 0) 70%
+            );
+            -webkit-mask-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 1) 0%,
+              rgba(0, 0, 0, 0) 70%
+            );
+            z-index: 1;
         }
 
         @media (prefers-color-scheme: dark) {
             .hero {
-                background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-                background-image:
-                    linear-gradient(rgba(18, 18, 18, 0.9), rgba(26, 26, 26, 0.95)),
-                    url('./assets/images/fundadora.png');
-                background-size: cover;
-                background-position: center right;
+                background: linear-gradient(
+                    to bottom,
+                    #1a1a1a 0%,
+                    #1a1a1a 35%,
+                    rgba(0, 0, 0, 0) 100%
+                  ),
+                  linear-gradient(to right, rgba(194, 226, 204, 0.3), rgba(43, 127, 133, 0.3));
+            }
+
+            .hero::before {
+                background-image: linear-gradient(90deg, rgba(255,255,255, 0.08) 1px, transparent 1px);
             }
         }
 
         @media (max-width: 768px) {
             .hero {
-                background-image:
-                    linear-gradient(rgba(248, 246, 244, 0.92), rgba(255, 255, 255, 0.97)),
-                    url('./assets/images/fundadora.png');
-                background-size: cover;
-                background-position: center;
                 background-attachment: scroll;
             }
         }
@@ -266,9 +290,10 @@
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1.5rem;
-            color: var(--text-dark);
+            color: #2b7f85;
             position: relative;
             z-index: 2;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
 
         .typewriter-text {
@@ -283,13 +308,14 @@
 
         .hero p {
             font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: var(--gray);
+            color: #2b7f85;
             line-height: 1.7;
             max-width: 600px;
             margin: 0 auto 2rem;
             animation: fadeInUp 0.8s ease-out 0.5s backwards;
             position: relative;
             z-index: 2;
+            font-weight: 500;
         }
 
         .cta-hero {
@@ -1460,127 +1486,6 @@
             opacity: 0;
         }
 
-        /* TEST BACKGROUNDS */
-        .test-backgrounds {
-            background: var(--ground);
-            padding: 40px 0;
-        }
-
-        .bg-test-container {
-            position: relative;
-            overflow: hidden;
-            margin: 20px auto;
-            max-width: 100%;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bg-test-label {
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #2b7f85;
-            z-index: 10;
-        }
-
-        /* Versión 1: Teal → Coral */
-        .bg-version-1 {
-            background: linear-gradient(
-                to bottom,
-                #f8f6f4 0%,
-                #f8f6f4 40%,
-                rgba(255, 255, 255, 0) 100%
-              ),
-              linear-gradient(to right, #2b7f85, #f27979);
-        }
-
-        .bg-version-1::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(90deg, rgba(255,255,255, 0.3) 1px, transparent 1px);
-            background-size: 50px 100%;
-            pointer-events: none;
-            mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-            -webkit-mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-        }
-
-        /* Versión 2: Verde → Teal */
-        .bg-version-2 {
-            background: linear-gradient(
-                to bottom,
-                #f8f6f4 0%,
-                #f8f6f4 35%,
-                rgba(255, 255, 255, 0) 100%
-              ),
-              linear-gradient(to right, #c2e2cc, #2b7f85);
-        }
-
-        .bg-version-2::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(90deg, rgba(255,255,255, 0.2) 1px, transparent 1px);
-            background-size: 50px 100%;
-            pointer-events: none;
-            mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-            -webkit-mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-        }
-
-        /* Versión 3: Coral → Verde */
-        .bg-version-3 {
-            background: linear-gradient(
-                to bottom,
-                #f8f6f4 0%,
-                #f8f6f4 40%,
-                rgba(255, 255, 255, 0) 100%
-              ),
-              linear-gradient(135deg, #f27979, #c2e2cc);
-        }
-
-        .bg-version-3::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(90deg, rgba(255,255,255, 0.25) 1px, transparent 1px);
-            background-size: 50px 100%;
-            pointer-events: none;
-            mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-            -webkit-mask-image: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 1) 0%,
-              rgba(0, 0, 0, 0) 70%
-            );
-        }
-
         /* VOTACIÓN SECTION STYLES */
         .vote-section {
             background: linear-gradient(135deg, rgba(43, 127, 133, 0.08) 0%, rgba(194, 226, 204, 0.08) 100%);
@@ -2616,35 +2521,6 @@
             </button>
         </div>
     </div>
-
-    <!-- PRUEBA DE FONDOS -->
-    <section class="test-backgrounds">
-        <h2 style="text-align: center; padding: 20px; font-size: 1.8rem; color: #2b7f85;">🎨 Prueba de Fondos</h2>
-
-        <div class="bg-test-container bg-version-1">
-            <div class="bg-test-label">Versión 1: Teal → Coral</div>
-            <div style="padding: 60px 40px; color: #2b7f85; text-align: center;">
-                <h3 style="font-size: 2rem; margin-bottom: 16px;">Este es el Hero mejorado</h3>
-                <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">El camino más seguro y eficiente para tu mejor EFIP</p>
-            </div>
-        </div>
-
-        <div class="bg-test-container bg-version-2">
-            <div class="bg-test-label">Versión 2: Verde → Teal (Pastel)</div>
-            <div style="padding: 60px 40px; color: #2b7f85; text-align: center;">
-                <h3 style="font-size: 2rem; margin-bottom: 16px;">Más suave y elegante</h3>
-                <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">Ideal para secciones premium</p>
-            </div>
-        </div>
-
-        <div class="bg-test-container bg-version-3">
-            <div class="bg-test-label">Versión 3: Coral → Verde (Diagonal)</div>
-            <div style="padding: 60px 40px; color: #2b7f85; text-align: center;">
-                <h3 style="font-size: 2rem; margin-bottom: 16px;">Diagonal y energético</h3>
-                <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">Para destacar secciones</p>
-            </div>
-        </div>
-    </section>
 
     <!-- FOOTER -->
     <footer>
