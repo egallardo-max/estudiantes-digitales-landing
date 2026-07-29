@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes Digitales — El camino más seguro para tu EFIP</title>
+    <meta name="description" content="Aprende a rendir tu EFIP con confianza. Metodología Aurora, profes expertos, comunidad de 37k. 98% de efectividad.">
+
+    <!-- META PIXEL CODE -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3915877008558725');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3915877008558725&ev=PageView&noscript=1" /></noscript>
+    <!-- END META PIXEL CODE -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2b7f85;
+            --secondary: #f27979;
+            --ground: #f8f6f4;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f6f4;
+            --gray: #a8a8a8;
+            --gray-light: #d9d9d9;
+            --accent-green: #c2e2cc;
+            --white: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --ground: #121212;
+                --text-dark: #f8f6f4;
+                --gray: #888888;
+                --gray-light: #333333;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--ground);
+            color: var(--text-dark);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* ANIMACIONES GLOBALES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% { border-right-color: var(--secondary); }
+            50%, 99% { border-right-color: transparent; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(242, 121, 121, 0.3); }
+            50% { box-shadow: 0 0 0 10px rgba(242, 121, 121, 0); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(242, 121, 121, 0.6), 0 0 40px rgba(43, 127, 133, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(242, 121, 121, 0.9), 0 0 60px rgba(43, 127, 133, 0.5);
+            }
+        }
+
+        /* HEADER */
+        header {
+            background: var(--ground);
+            padding: 1.5rem 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            line-height: 1;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--white);
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: -2px;
+        }
+
+        .logo-text-main {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text-sub {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        .nav-mobile {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                padding: 1.5rem 3rem;
+            }
+            .nav-mobile {
+                display: none;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8f6f4 0%, #ffffff 100%);
+            background-image:
+                linear-gradient(rgba(248, 246, 244, 0.85), rgba(255, 255, 255, 0.9)),
+                url('./assets/images/fundadora.png');
+            background-size: cover;
+            background-position: center right;
+            background-attachment: fixed;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero {
+                background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+                background-image:
+                    linear-gradient(rgba(18, 18, 18, 0.9), rgba(26, 26, 26, 0.95)),
+                    url('./assets/images/fundadora.png');
+                background-size: cover;
+                background-position: center right;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background-image:
+                    linear-gradient(rgba(248, 246, 244, 0.92), rgba(255, 255, 255, 0.97)),
+                    url('./assets/images/fundadora.png');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 2;
+        }
+
+        .typewriter-text {
+            border-right: 3px solid var(--secondary);
+            overflow: hidden;
+            display: inline-block;
+            animation: typewriter 4s steps(80, end) 0.3s forwards, blink 0.6s infinite 4.3s;
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .hero p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--gray);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-hero {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease-out 0.7s backwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-hero:hover {
+            background: #206b71;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 5rem 3rem;
+            }
+        }
+
+        /* RECORDS BANNER / MARQUEE */
+        .records-banner {
+            background: linear-gradient(90deg, #e8f3f5 0%, #f5e8f3 100%);
+            padding: 1.2rem 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(43, 127, 133, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .records-banner {
+                background: linear-gradient(90deg, #1a3a3f 0%, #3a2a3a 100%);
+            }
+        }
+
+        .records-banner-content {
+            display: flex;
+            animation: slide-infinite 35s linear infinite;
+            gap: 4rem;
+            padding: 0 1.5rem;
+            width: fit-content;
+        }
+
+        @keyframes slide-infinite {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .record-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            white-space: nowrap;
+            min-width: fit-content;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            font-weight: 600;
+        }
+
+        .record-number {
+            font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
+        .record-label {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .record-divider {
+            width: 1px;
+            height: 35px;
+            background: linear-gradient(180deg, rgba(242, 121, 121, 0.3), rgba(43, 127, 133, 0.3));
+        }
+
+        /* SECCIÓN CURSOS */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        /* GRID DE CURSOS */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .courses-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .course-card {
+            position: relative;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card::before,
+        .course-card::after {
+            position: absolute;
+            content: "";
+            width: 20%;
+            height: 20%;
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.12), rgba(194, 226, 204, 0.12));
+            transition: all 0.5s;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .course-card::before {
+            top: 0;
+            right: 0;
+            border-radius: 0 12px 0 100%;
+        }
+
+        .course-card::after {
+            bottom: 0;
+            left: 0;
+            border-radius: 0 100% 0 12px;
+        }
+
+        .course-card:hover::before,
+        .course-card:hover::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            transition: all 0.5s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .course-card {
+                background: #1e1e1e;
+            }
+        }
+
+        .course-visual {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 1.5rem;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .course-visual.efip-abogacia-1 {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.7), rgba(31, 90, 94, 0.8)), url('./assets/images/cursos/portada-abogacia-efip1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-visual.efip-abogacia-2 {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.7), rgba(31, 90, 94, 0.8)), url('./assets/images/cursos/portada-abogacia-efip2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-visual.efip-contador {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.7), rgba(31, 90, 94, 0.8)), url('./assets/images/cursos/portada-contabilidad-efip1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-visual.efip-admin {
+            background: linear-gradient(135deg, rgba(168, 149, 106, 0.7), rgba(139, 125, 95, 0.8)), url('./assets/images/cursos/portada-administracion-efip1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-visual.efip-seminario {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.7), rgba(31, 90, 94, 0.8)), url('./assets/images/cursos/portada-abogacia-efip2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-visual.mas-cursos {
+            background: linear-gradient(135deg, #c2e2cc 0%, #8fc9a8 100%);
+        }
+
+        .course-badge {
+            background: #ffc107;
+            color: #1a1a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+
+        .course-stars {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .course-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .course-card:nth-child(5) { animation-delay: 0.5s; }
+        .course-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @media (prefers-color-scheme: dark) {
+            .course-card {
+                background: #1e1e1e;
+            }
+        }
+
+        .course-card:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 24px rgba(242, 121, 121, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .course-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .course-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .course-content a {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #206b71);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .course-content a:hover {
+            box-shadow: 0 4px 12px rgba(43, 127, 133, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* SECCIÓN PROFESORES */
+        .professors-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .professors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .professors-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .professor-card {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .professor-card:nth-child(1) { animation-delay: 0.1s; }
+        .professor-card:nth-child(2) { animation-delay: 0.2s; }
+        .professor-card:nth-child(3) { animation-delay: 0.3s; }
+        .professor-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .professor-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent-green));
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: transform 0.3s;
+        }
+
+        .professor-card:hover .professor-avatar {
+            transform: scale(1.1);
+        }
+
+        .professor-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .professor-credential {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .professor-bio {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* MÉTODO AURORA */
+        .aurora-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f0feff 100%);
+            border-radius: 20px;
+            padding: 3.5rem 1.5rem;
+            margin-top: 2rem;
+            border: 2px solid rgba(43, 127, 133, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aurora-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(194, 226, 204, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .aurora-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -30%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(43, 127, 133, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+            .aurora-container {
+                padding: 4rem 3rem;
+            }
+        }
+
+        .aurora-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .aurora-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .aurora-step {
+            position: relative;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(43, 127, 133, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .aurora-step::before,
+        .aurora-step::after {
+            position: absolute;
+            content: "";
+            width: 20%;
+            height: 20%;
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.12), rgba(194, 226, 204, 0.15));
+            transition: all 0.5s;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .aurora-step::before {
+            top: 0;
+            right: 0;
+            border-radius: 0 12px 0 100%;
+        }
+
+        .aurora-step::after {
+            bottom: 0;
+            left: 0;
+            border-radius: 0 100% 0 12px;
+        }
+
+        .aurora-step:hover::before,
+        .aurora-step:hover::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            transition: all 0.5s;
+        }
+
+        .aurora-step:hover {
+            box-shadow: 0 8px 24px rgba(43, 127, 133, 0.1);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .aurora-step:nth-child(1) { animation-delay: 0.1s; }
+        .aurora-step:nth-child(2) { animation-delay: 0.2s; }
+        .aurora-step:nth-child(3) { animation-delay: 0.3s; }
+        .aurora-step:nth-child(4) { animation-delay: 0.4s; }
+        .aurora-step:nth-child(5) { animation-delay: 0.5s; }
+        .aurora-step:nth-child(6) { animation-delay: 0.6s; }
+
+        .aurora-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #206b71);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            animation: glow-pulse 3s ease-in-out infinite, float 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(242, 121, 121, 0.4);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aurora-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .aurora-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .aurora-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* RECORDS SECTION */
+        .records-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .records-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .records-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* FLIP CARDS STYLES */
+        .flip-card {
+            background-color: transparent;
+            width: 280px;
+            height: 280px;
+            perspective: 1000px;
+            margin: 1rem auto;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .flip-card:nth-child(1) { animation-delay: 0.1s; }
+        .flip-card:nth-child(2) { animation-delay: 0.2s; }
+        .flip-card:nth-child(3) { animation-delay: 0.3s; }
+        .flip-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.15) 0%, rgba(194, 226, 204, 0.15) 100%);
+            color: var(--text-dark);
+            border: 2px solid rgba(43, 127, 133, 0.2);
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, rgba(242, 121, 121, 0.15) 0%, rgba(43, 127, 133, 0.12) 100%);
+            color: var(--text-dark);
+            border: 2px solid rgba(242, 121, 121, 0.2);
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front .card-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), #206b71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .flip-card-front .card-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flip-card-front .card-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        .flip-card-back .card-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .flip-card {
+                width: 240px;
+                height: 240px;
+            }
+            .flip-card-front, .flip-card-back {
+                padding: 1.5rem;
+            }
+            .flip-card-front .card-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* TESTIMONIOS CAROUSEL HORIZONTAL */
+        .testimonials-wrapper {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .testimonials-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-container {
+                scroll-snap-type: x mandatory;
+                scroll-padding: 50%;
+            }
+        }
+
+        .testimonial-slide {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: var(--white);
+            padding: 1.5rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .testimonial-slide {
+                background: #1e1e1e;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slide {
+                flex: 0 0 85vw;
+                transform: scale(0.9);
+                opacity: 0.6;
+            }
+
+            .testimonial-slide.active {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .testimonial-slide:hover {
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.15);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slide:hover {
+                transform: scale(1) translateY(-4px);
+            }
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.125rem;
+            color: rgb(238, 203, 8);
+        }
+
+        .testimonial-star {
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+
+        .testimonial-infos {
+            margin-top: 1rem;
+        }
+
+        .testimonial-date {
+            color: rgba(43, 127, 133, 1);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial-quote {
+            margin-top: 0.5rem;
+            line-height: 1.625;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-quote strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .testimonial-author {
+            margin-top: 1.3rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* CAROUSEL CONTROLS */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: linear-gradient(135deg, var(--primary), #206b71);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .carousel-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(43, 127, 133, 0.3);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-nav {
+                display: none;
+            }
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 769px) {
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* SECCIÓN LIDERAZGO */
+        .leadership-section {
+            text-align: center;
+        }
+
+        .leadership-badges {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .leadership-badges {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .badge {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .badge {
+                background: #1e1e1e;
+            }
+        }
+
+        .badge:nth-child(1) { animation-delay: 0.1s; }
+        .badge:nth-child(2) { animation-delay: 0.2s; }
+        .badge:nth-child(3) { animation-delay: 0.3s; }
+
+        .badge:hover {
+            box-shadow: 0 8px 24px rgba(43, 127, 133, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        /* BESTSELLERS / MÁS VENDIDOS */
+        .bestsellers-section {
+            background: linear-gradient(135deg, rgba(248, 246, 244, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+            padding: 3rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .bestsellers-section {
+                background: linear-gradient(135deg, rgba(18, 18, 18, 0.5) 0%, rgba(26, 26, 26, 0.5) 100%);
+            }
+        }
+
+        .bestsellers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bestsellers-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .bestsellers-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .bestsellers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .bestsellers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        .bestseller-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bestseller-card:nth-child(1) { animation-delay: 0.1s; }
+        .bestseller-card:nth-child(2) { animation-delay: 0.2s; }
+        .bestseller-card:nth-child(3) { animation-delay: 0.3s; }
+        .bestseller-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @media (prefers-color-scheme: dark) {
+            .bestseller-card {
+                background: #1e1e1e;
+            }
+        }
+
+        .bestseller-card:hover {
+            box-shadow: 0 8px 24px rgba(43, 127, 133, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .bestseller-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bestseller-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--secondary);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .bestseller-badge.premium {
+            background: linear-gradient(135deg, #6c63ff 0%, #5a52d5 100%);
+        }
+
+        .bestseller-content {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bestseller-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .bestseller-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .bestseller-stars {
+            color: #ffc107;
+        }
+
+        .bestseller-reviews {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .bestseller-prices {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .bestseller-original {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .bestseller-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .bestseller-btn {
+            width: 100%;
+            background: var(--text-dark);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bestseller-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .bestsellers-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .bestsellers-nav {
+                display: none;
+            }
+        }
+
+        .bestseller-btn-nav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .bestseller-btn-nav:hover {
+            background: #206b71;
+            transform: scale(1.1);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--primary), #206b71);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+            opacity: 0.8;
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 3rem;
+            }
+            footer {
+                padding: 4rem 3rem;
+            }
+        }
+
+        /* RESPONSIVE ADJUSTMENTS */
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .course-card {
+                padding: 1.2rem;
+            }
+            .aurora-step {
+                gap: 1rem;
+            }
+            .aurora-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ANIMACIÓN FADE-IN AL SCROLL */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* EXIT INTENT MODAL STYLES */
+        .exit-intent-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .exit-intent-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .exit-intent-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .exit-intent-container {
+            position: relative;
+            background: linear-gradient(135deg, #f27979 0%, #f39b8d 100%);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideInUp 0.4s ease-out;
+            z-index: 10000;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .exit-intent-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2b7f85;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .exit-intent-close:hover {
+            background: #ffffff;
+            transform: rotate(90deg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .exit-intent-content {
+            padding: 40px 32px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .exit-intent-title {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .exit-intent-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .exit-intent-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .exit-intent-description strong {
+            color: #2b7f85;
+            font-weight: 600;
+        }
+
+        .exit-intent-highlight {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 16px 0 12px;
+        }
+
+        .exit-intent-benefits {
+            list-style: none;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .exit-intent-benefits li {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exit-intent-benefits li:before {
+            content: "✓";
+            color: #2b7f85;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .exit-intent-benefits li:last-child {
+            margin-bottom: 0;
+        }
+
+        .exit-intent-whatsapp-group {
+            margin: 24px 0;
+        }
+
+        .exit-intent-group-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        @media (min-width: 480px) {
+            .whatsapp-buttons {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 16px;
+            background: #ffffff;
+            color: #2b7f85;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+        }
+
+        .whatsapp-btn:hover:not(.whatsapp-btn-disabled) {
+            background: #2b7f85;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:active:not(.whatsapp-btn-disabled) {
+            transform: translateY(0);
+        }
+
+        .whatsapp-btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .whatsapp-btn-disabled:hover {
+            background: #ffffff;
+            color: #2b7f85;
+            transform: none;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        .whatsapp-text {
+            display: inline;
+            font-size: 0.85rem;
+        }
+
+        .exit-intent-skip {
+            display: block;
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .exit-intent-skip:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .exit-intent-skip:active {
+            transform: scale(0.98);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .exit-intent-container {
+                width: 95%;
+                border-radius: 12px;
+            }
+
+            .exit-intent-content {
+                padding: 32px 20px;
+            }
+
+            .exit-intent-title {
+                font-size: 1.4rem;
+            }
+
+            .exit-intent-description {
+                font-size: 0.9rem;
+                padding: 14px;
+            }
+
+            .whatsapp-btn {
+                padding: 12px 14px;
+                font-size: 0.8rem;
+            }
+
+            .exit-intent-skip {
+                padding: 12px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">ED</div>
+                <div class="logo-text">
+                    <div class="logo-text-main">ESTUDIANTES</div>
+                    <div class="logo-text-main">DIGITALES</div>
+                </div>
+            </div>
+            <div class="nav-mobile">📚</div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1><span class="typewriter-text">El camino más seguro y eficiente para tu mejor EFIP</span></h1>
+        <p>Aprende de verdad, sin memorización. Con metodología validada, profes que te bancan, y comunidad que te sostiene.</p>
+        <a href="#cursos" class="cta-hero">Ver cursos disponibles</a>
+    </section>
+
+    <!-- RECORDS BANNER -->
+    <div class="records-banner">
+        <div class="records-banner-content">
+            <div class="record-item">
+                <div class="record-number">98%</div>
+                <div class="record-label">Efectividad</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">4.000+</div>
+                <div class="record-label">Aprobados</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">37k+</div>
+                <div class="record-label">Comunidad</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">4+</div>
+                <div class="record-label">Años</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <!-- Repetir para el scroll infinito -->
+            <div class="record-item">
+                <div class="record-number">98%</div>
+                <div class="record-label">Efectividad</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">4.000+</div>
+                <div class="record-label">Aprobados</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">37k+</div>
+                <div class="record-label">Comunidad</div>
+            </div>
+            <div class="record-divider"></div>
+
+            <div class="record-item">
+                <div class="record-number">4+</div>
+                <div class="record-label">Años</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURSOS SECTION -->
+    <section class="section" id="cursos">
+        <h2 class="section-title">Nuestros Cursos EFIP</h2>
+        <p class="section-subtitle">Disponibles para todas las profesiones. Elige tu camino.</p>
+
+        <div class="courses-grid">
+            <!-- EFIP 1 ABOGACÍA -->
+            <div class="course-card">
+                <div class="course-visual efip-abogacia-1">
+                    <div class="course-badge">EFIP 1</div>
+                    <div class="course-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="course-content">
+                    <h3>Abogacía</h3>
+                    <p>Derecho Constitucional, Penal, Civil y Procesal. Con profes expertos. 98% aprueba.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/product/EDefip1" target="_blank">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- EFIP 2 ABOGACÍA -->
+            <div class="course-card">
+                <div class="course-visual efip-abogacia-2">
+                    <div class="course-badge">EFIP 2</div>
+                    <div class="course-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="course-content">
+                    <h3>Abogacía</h3>
+                    <p>Familia, Sucesiones, Laboral, Procedimiento. Método Aurora®.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/product/EFIP2-ED" target="_blank">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- EFIP 1 CONTADOR -->
+            <div class="course-card">
+                <div class="course-visual efip-contador">
+                    <div class="course-badge">EFIP 1</div>
+                    <div class="course-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="course-content">
+                    <h3>Contabilidad</h3>
+                    <p>Contabilidad completa para Contadores. Balance, Auditoría. 120 días acceso.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/product/efip1contador2026" target="_blank">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- EFIP 1 ADMINISTRACIÓN -->
+            <div class="course-card">
+                <div class="course-visual efip-admin">
+                    <div class="course-badge">EFIP 1</div>
+                    <div class="course-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="course-content">
+                    <h3>Administración</h3>
+                    <p>Administración, Proyectos, Marketing, Finanzas. Aplicable desde día 1.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/product/efip1administracion" target="_blank">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- SEMINARIO FINAL -->
+            <div class="course-card">
+                <div class="course-visual efip-seminario">
+                    <div class="course-badge">SEMINARIO</div>
+                    <div class="course-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="course-content">
+                    <h3>Seminario Final</h3>
+                    <p>Nota a Fallo: videoclases, guías y planificadores. Método Aurora®.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/product/cursoseminariofinal" target="_blank">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- MÁS CURSOS -->
+            <div class="course-card">
+                <div class="course-visual mas-cursos">
+                    <div class="course-badge">EXPLORAR</div>
+                    <div class="course-stars">✨✨✨</div>
+                </div>
+                <div class="course-content">
+                    <h3>Más Cursos</h3>
+                    <p>Explora nuestra oferta completa. Nuevos cursos, seminarios y especializaciones.</p>
+                    <a href="https://estudiantesdigitales.wisboo.com/catalog" target="_blank">Explorar catálogo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESORES SECTION -->
+    <section class="section">
+        <h2 class="section-title">Profesionales que te acompañan</h2>
+        <p class="section-subtitle">Profes de verdad. Con experiencia real. Que te bancan.</p>
+
+        <div class="professors-grid">
+            <div class="professor-card">
+                <div class="professor-avatar">👩‍🏫</div>
+                <div class="professor-name">Federica Morici</div>
+                <div class="professor-credential">Especialista en Derecho Civil</div>
+                <div class="professor-bio">Apasionada por enseñar posta. 10+ años acompañando estudiantes.</div>
+            </div>
+
+            <div class="professor-card">
+                <div class="professor-avatar">👨‍⚖️</div>
+                <div class="professor-name">Prof. Eduardo Valdés</div>
+                <div class="professor-credential">Abogado Litigante (EFIP)</div>
+                <div class="professor-bio">Conoce cada pregunta que toman. Transmite seguridad.</div>
+            </div>
+
+            <div class="professor-card">
+                <div class="professor-avatar">👩‍💼</div>
+                <div class="professor-name">Maria Celeste Ceballos</div>
+                <div class="professor-credential">Contadora Pública</div>
+                <div class="professor-bio">Convierte números en conceptos claros y memorables.</div>
+            </div>
+
+            <div class="professor-card">
+                <div class="professor-avatar">👨‍💼</div>
+                <div class="professor-name">Marco Agustín Reynoso</div>
+                <div class="professor-credential">Profesional en Administración</div>
+                <div class="professor-bio">Experto en casos prácticos. Enseña aplicable desde día 1.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTODO AURORA -->
+    <section class="section">
+        <h2 class="section-title">Por qué funciona: Método Aurora</h2>
+        <p class="section-subtitle">6 pilares validados que transforman tu aprendizaje</p>
+
+        <div class="aurora-container">
+            <div class="aurora-grid">
+                <div class="aurora-step">
+                    <div class="aurora-number">01</div>
+                    <div class="aurora-content">
+                        <h3>Tecnología e IA</h3>
+                        <p>Memorizadores, Avatares y Guía inteligente</p>
+                    </div>
+                </div>
+
+                <div class="aurora-step">
+                    <div class="aurora-number">02</div>
+                    <div class="aurora-content">
+                        <h3>Clases Completas</h3>
+                        <p>Punto por punto del programa, sin vueltas</p>
+                    </div>
+                </div>
+
+                <div class="aurora-step">
+                    <div class="aurora-number">03</div>
+                    <div class="aurora-content">
+                        <h3>Casos Prácticos</h3>
+                        <p>Lo que de verdad toman en el EFIP</p>
+                    </div>
+                </div>
+
+                <div class="aurora-step">
+                    <div class="aurora-number">04</div>
+                    <div class="aurora-content">
+                        <h3>Música para Memorizar</h3>
+                        <p>Fija los conceptos clave y no se borran</p>
+                    </div>
+                </div>
+
+                <div class="aurora-step">
+                    <div class="aurora-number">05</div>
+                    <div class="aurora-content">
+                        <h3>Planificadores</h3>
+                        <p>Llegas organizado, sin quemarte la cabeza</p>
+                    </div>
+                </div>
+
+                <div class="aurora-step">
+                    <div class="aurora-number">06</div>
+                    <div class="aurora-content">
+                        <h3>Comunidad 37k</h3>
+                        <p>Estudias con amigos, nunca solo/a</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECORDS SECTION -->
+    <section class="section">
+        <h2 class="section-title">Números que hablan por sí solos</h2>
+        <p class="section-subtitle">Son datos reales. Estudiantes que se recibieron, que aprendieron posta, que llegaron tranquilos.</p>
+
+        <div class="records-grid">
+            <!-- Flip Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-number">98%</div>
+                        <div class="card-label">Efectividad</div>
+                        <p class="card-description">98% de efectividad en aprobación al primer intento</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-description">Nuestros estudiantes logran resultados excepcionales gracias a la metodología Aurora y al acompañamiento de profesores especializados en EFIP.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flip Card 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-number">4k+</div>
+                        <div class="card-label">Aprobados</div>
+                        <p class="card-description">4.000+ estudiantes se han recibido con nosotros</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-description">Cada historia es única. Estudiantes que pasaron de la incertidumbre a la confianza, y de la memorización al conocimiento real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flip Card 3 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-number">37k+</div>
+                        <div class="card-label">Comunidad</div>
+                        <p class="card-description">37 mil+ profesionales en Iberoamérica</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-description">Una red activa de estudiantes, profesionales y docentes que se acompañan, comparten experiencias y celebran cada logro juntos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flip Card 4 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-number">4+</div>
+                        <div class="card-label">Años</div>
+                        <p class="card-description">Más de 4 años liderando la educación humanizada</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="card-description">Reconocidos internacionalmente por transformar la forma en que se enseña EFIP. Innovación, confianza y resultados reales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS CAROUSEL HORIZONTAL -->
+    <section class="section">
+        <h2 class="section-title">Quiénes llegaron tranquilos</h2>
+        <p class="section-subtitle">37 historias reales de estudiantes que se recibieron con nosotros</p>
+
+        <div class="testimonials-wrapper">
+            <div class="testimonials-container" id="testimonials-carousel">
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Abogacía</div><p class="testimonial-quote"><strong>"Quedé fascinada"</strong> con la metodología. Me recibí en el primer intento.</p></div><div class="testimonial-author">Andrea Cabutti</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Abogacía</div><p class="testimonial-quote"><strong>"Fue clave"</strong> para aplicar la teoría a lo práctico. Lo recomiendo 100%.</p></div><div class="testimonial-author">Ale Mijoc</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II Defensa</div><p class="testimonial-quote"><strong>"Me recibí de abogado gracias"</strong> a cada uno del grupo. Acompañamiento real.</p></div><div class="testimonial-author">Cristian Álvarez</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Abogacía</div><p class="testimonial-quote"><strong>"Son increíbles."</strong> No solo enseñan, acompañan tu proceso.</p></div><div class="testimonial-author">Eve Silberstein</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 1 Abogacía</div><p class="testimonial-quote"><strong>"Eternamente agradecida."</strong> Cambió mi forma de estudiar.</p></div><div class="testimonial-author">María Fernanda</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II Defensa</div><p class="testimonial-quote"><strong>"Aprobé."</strong> Gracias a la ampliación del curso. Cuatro meses de dedicación valieron la pena.</p></div><div class="testimonial-author">J.M.M</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Tribunales</div><p class="testimonial-quote"><strong>"Ayer rendí y aprobé"</strong> Gracias estudiantes digitales, les debo mucho a su curso.</p></div><div class="testimonial-author">Daniel</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Córdoba</div><p class="testimonial-quote"><strong>"Son increíbles"</strong> con todas las clases y explicaciones. Los recomiendo.</p></div><div class="testimonial-author">Eve Silberstein</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Salta</div><p class="testimonial-quote"><strong>"Ayer rendí en Salta"</strong> y aprobé. Mil felicitaciones a todo el equipo.</p></div><div class="testimonial-author">Cecilia</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Quiero contarles que ayer rendí"</strong> y aprobé. Gracias a todos por el apoyo.</p></div><div class="testimonial-author">Lourdes Ponce</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2</div><p class="testimonial-quote"><strong>"Buenas noches."</strong> Esta tarde rendí EFIP 2 y aprobé. Gracias ED!!!</p></div><div class="testimonial-author">Guillermo Cruz</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP I</div><p class="testimonial-quote"><strong>"Chicos aprobé!"</strong> Muchas gracias por las clases. Pude ver muchas y me ayudó.</p></div><div class="testimonial-author">JIME</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP I</div><p class="testimonial-quote"><strong>"Gracias por los acompañamiento"</strong> realizado. Hoy aprobé con 9 siguiendo el curso.</p></div><div class="testimonial-author">Estudiante</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 1</div><p class="testimonial-quote"><strong>"Hola, aprobé EFIP 1"</strong> Hice el curso con ustedes. Gracias Eduardo.</p></div><div class="testimonial-author">Ser y parecer</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Salta</div><p class="testimonial-quote"><strong>"Como están. Les comparto"</strong> mi experiencia con el EFIP 2. Rendimos 7, aprobamos 5.</p></div><div class="testimonial-author">Roxy</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 2 Mar del Plata</div><p class="testimonial-quote"><strong>"Ayer rendí en CAU Mar del Plata"</strong> y aprobé. Caso Marcelo y Ana.</p></div><div class="testimonial-author">Verónica Villalba</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Chicoooooos aprobeeee"</strong> efip 2. Súper agradecida a estudiantes digitales.</p></div><div class="testimonial-author">Graciela</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II Defensa</div><p class="testimonial-quote"><strong>"Bueno gente hoy aprobé"</strong> el EFIP. Familia, sucesiones y daños.</p></div><div class="testimonial-author">Anónimo</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Hola a todos!"</strong> Quiero contarles que ayer rendí y aprobé EFIP II.</p></div><div class="testimonial-author">Isabel Mosna</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP</div><p class="testimonial-quote"><strong>"Hola, buenos días"</strong> a todos. Quería contarles que aprobé EFIP I.</p></div><div class="testimonial-author">Valentina</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Buen día"</strong> ayer rendí EFIP 2 en tribunales y aprobé. Gracias.</p></div><div class="testimonial-author">Daniel</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP 1</div><p class="testimonial-quote"><strong>"Hola!"</strong> Yo rendí el EFIP 2 hoy. Aprobé. Las clases son increíbles.</p></div><div class="testimonial-author">Eve S.</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP</div><p class="testimonial-quote"><strong>"Hola, aprobé EFIP 1"</strong> Hice el curso con ustedes. Muchas gracias.</p></div><div class="testimonial-author">Estudiante</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Hago llegar mi agradecimiento"</strong> por el curso de ED. Me ayudó muchísimo.</p></div><div class="testimonial-author">Esteban Insau</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP II</div><p class="testimonial-quote"><strong>"Muchas gracias"</strong> por toda la colaboración brindada. Aprobé EFIP 2.</p></div><div class="testimonial-author">Lorena Beca</div></div>
+
+                <div class="testimonial-slide"><div class="testimonial-stars"><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span><span class="testimonial-star">⭐</span></div><div class="testimonial-infos"><div class="testimonial-date">EFIP</div><p class="testimonial-quote"><strong>"Buen día como están"</strong> les comento que ayer rendí EFIP, aprobé.</p></div><div class="testimonial-author">Silvana Guarez</div></div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prev-btn" onclick="scrollCarousel(-1)">❮</button>
+                <span style="font-size: 0.9rem; color: var(--gray); min-width: 80px; text-align: center;" id="carousel-counter">1 / 27</span>
+                <button class="carousel-btn" id="next-btn" onclick="scrollCarousel(1)">❯</button>
+            </div>
+
+            <div class="scroll-indicator">
+                ← Desliza para ver más testimonios →
+            </div>
+        </div>
+    </section>
+
+    <!-- LIDERAZGO SECTION -->
+    <section class="section">
+        <h2 class="section-title">Reconocidos internacionalmente</h2>
+        <p class="section-subtitle">Referentes en educación humanizada</p>
+
+        <div class="leadership-badges">
+            <div class="badge">
+                <div class="badge-icon">👑</div>
+                <div class="badge-name">WIC — Women In Leadership</div>
+            </div>
+
+            <div class="badge">
+                <div class="badge-icon">🌍</div>
+                <div class="badge-name">GYLP 2025 — Global Young Leaders</div>
+            </div>
+
+            <div class="badge">
+                <div class="badge-icon">⭐</div>
+                <div class="badge-name">Certificación de Calidad Educativa</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXIT INTENT POPUP / MODAL VIP -->
+    <div id="exitIntentModal" class="exit-intent-modal">
+        <div class="exit-intent-overlay"></div>
+        <div class="exit-intent-container">
+            <button id="closeExitModal" class="exit-intent-close">✕</button>
+
+            <div class="exit-intent-content">
+                <h2 class="exit-intent-title">¡Espera un momento!</h2>
+                <p class="exit-intent-subtitle">Únete a nuestra comunidad VIP</p>
+
+                <p class="exit-intent-description">
+                    En nuestros <strong>grupos privados de WhatsApp</strong>, encontrarás una comunidad de estudiantes y profesores que se acompañan en el camino hacia el mejor EFIP.
+                </p>
+
+                <p class="exit-intent-highlight">
+                    Aquí recibirás:
+                </p>
+
+                <ul class="exit-intent-benefits">
+                    <li>Acompañamiento personalizado</li>
+                    <li>Resolución de dudas en tiempo real</li>
+                    <li>Comunidad de estudiantes como tú</li>
+                    <li>Tips y actualizaciones del EFIP</li>
+                </ul>
+
+                <div class="exit-intent-whatsapp-group">
+                    <p class="exit-intent-group-label">Elige tu grupo:</p>
+
+                    <div class="whatsapp-buttons">
+                        <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                            <span class="whatsapp-icon">💬</span>
+                            <span class="whatsapp-text">Derecho EFIP 1</span>
+                        </a>
+
+                        <a href="https://chat.whatsapp.com/CIZYT39vcu44apa7cnUemS" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                            <span class="whatsapp-icon">💬</span>
+                            <span class="whatsapp-text">Derecho EFIP 2</span>
+                        </a>
+
+                        <a href="#" class="whatsapp-btn whatsapp-btn-disabled" title="Próximamente disponible">
+                            <span class="whatsapp-icon">💬</span>
+                            <span class="whatsapp-text">Contabilidad EFIP</span>
+                        </a>
+
+                        <a href="#" class="whatsapp-btn whatsapp-btn-disabled" title="Próximamente disponible">
+                            <span class="whatsapp-icon">💬</span>
+                            <span class="whatsapp-text">Lic. Administración</span>
+                        </a>
+                    </div>
+                </div>
+
+                <button id="skipExitModal" class="exit-intent-skip">Continuar sin unirme</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">Estudiantes Digitales</h3>
+            <p class="footer-text">El camino más seguro y eficiente para tu mejor EFIP</p>
+            <div class="footer-nav">
+                <a href="#cursos">Cursos</a>
+                <a href="#metodo">Metodología</a>
+                <a href="#testimonios">Comunidad</a>
+                <a href="mailto:hola@estudiantesdigitales.com">Contacto</a>
+            </div>
+            <p class="footer-copyright">© 2026 Estudiantes Digitales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // META PIXEL TRACKING EVENTS
+        document.addEventListener('DOMContentLoaded', () => {
+            // Track course card views
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach((card, index) => {
+                const courseName = card.querySelector('h3').textContent;
+                card.addEventListener('mouseenter', () => {
+                    fbq('track', 'ViewContent', {
+                        content_name: courseName,
+                        content_type: 'course',
+                        content_ids: ['course_' + (index + 1)]
+                    });
+                });
+            });
+
+            // Track course clicks (Ver detalles)
+            const courseLinks = document.querySelectorAll('.course-content a');
+            courseLinks.forEach((link, index) => {
+                link.addEventListener('click', () => {
+                    const courseName = link.closest('.course-card').querySelector('h3').textContent;
+                    fbq('track', 'AddToCart', {
+                        content_name: courseName,
+                        content_type: 'course',
+                        value: 1,
+                        currency: 'ARS'
+                    });
+                });
+            });
+
+            // Track section views with Intersection Observer
+            const sections = document.querySelectorAll('.section');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionTitle = entry.target.querySelector('.section-title');
+                        if (sectionTitle) {
+                            fbq('track', 'ViewContent', {
+                                content_name: 'Section: ' + sectionTitle.textContent,
+                                content_type: 'section'
+                            });
+                        }
+                        sectionObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => sectionObserver.observe(section));
+
+            // Track testimonial carousel interactions
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    fbq('track', 'ViewContent', {
+                        content_name: 'Testimonial: ' + (index + 1),
+                        content_type: 'testimonial'
+                    });
+                });
+            });
+        });
+
+        // HERO TYPEWRITER EFFECT
+        window.addEventListener('load', () => {
+            const typewriterElements = document.querySelectorAll('.typewriter-text');
+            typewriterElements.forEach(el => {
+                const text = el.textContent;
+                el.textContent = '';
+                let index = 0;
+
+                const typeChar = () => {
+                    if (index < text.length) {
+                        el.textContent += text[index];
+                        index++;
+                        setTimeout(typeChar, 60);
+                    }
+                };
+
+                typeChar();
+            });
+        });
+
+        // COUNTER ANIMATION FOR FLIP CARDS
+        const counterNumbers = document.querySelectorAll('[data-target]');
+        let hasAnimated = false;
+
+        const animateCounters = () => {
+            if (hasAnimated) return;
+            hasAnimated = true;
+
+            counterNumbers.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = Math.max(1, Math.ceil(target / 50));
+                const step = 75;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                    }
+
+                    if (counter.getAttribute('data-target') === '98') {
+                        counter.textContent = current + '%';
+                    } else if (counter.getAttribute('data-target') === '37') {
+                        counter.textContent = current + 'k+';
+                    } else if (counter.getAttribute('data-target') === '4000') {
+                        counter.textContent = (current / 1000).toFixed(1) + 'k+';
+                    } else {
+                        counter.textContent = current + '+';
+                    }
+
+                    if (current < target) {
+                        setTimeout(updateCounter, step);
+                    }
+                };
+
+                updateCounter();
+            });
+        };
+
+        // INTERSECTION OBSERVER para animaciones al scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('records-grid')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        const recordsGrid = document.querySelector('.records-grid');
+        if (recordsGrid) {
+            observer.observe(recordsGrid);
+        }
+
+
+        // CAROUSEL HORIZONTAL MANAGEMENT
+        const carousel = document.getElementById('testimonials-carousel');
+        const counter = document.getElementById('carousel-counter');
+        let currentSlide = 0;
+
+        function scrollCarousel(direction) {
+            if (!carousel) return;
+            const slides = carousel.querySelectorAll('.testimonial-slide');
+            const slideWidth = slides[0].offsetWidth + 24; // width + gap
+
+            currentSlide = Math.max(0, Math.min(currentSlide + direction, slides.length - 1));
+            carousel.scrollLeft = currentSlide * slideWidth;
+
+            updateCounter();
+        }
+
+        function updateCounter() {
+            if (counter) {
+                const slides = carousel.querySelectorAll('.testimonial-slide');
+                counter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+            }
+        }
+
+        // Mobile: Update active card on scroll
+        function updateActiveCard() {
+            if (window.innerWidth <= 768 && carousel) {
+                const slides = carousel.querySelectorAll('.testimonial-slide');
+                const containerCenter = carousel.clientWidth / 2 + carousel.scrollLeft;
+
+                slides.forEach(slide => slide.classList.remove('active'));
+
+                slides.forEach(slide => {
+                    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+                    if (Math.abs(slideCenter - containerCenter) < 100) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        if (carousel) {
+            carousel.addEventListener('scroll', updateActiveCard);
+            carousel.addEventListener('scroll', () => {
+                const slides = carousel.querySelectorAll('.testimonial-slide');
+                const slideWidth = slides[0].offsetWidth + 24;
+                currentSlide = Math.round(carousel.scrollLeft / slideWidth);
+                updateCounter();
+            });
+        }
+
+        // Track testimonial views
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialCards = document.querySelectorAll('.testimonial-slide');
+            testimonialCards.forEach((card, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const author = card.querySelector('.testimonial-author').textContent;
+                            fbq('track', 'ViewContent', {
+                                content_name: 'Testimonial: ' + author,
+                                content_type: 'testimonial'
+                            });
+                        }
+                    });
+                }, { threshold: 0.7 });
+
+                observer.observe(card);
+            });
+
+            updateActiveCard();
+        });
+
+        // BESTSELLERS CAROUSEL
+        function scrollBestsellers(direction) {
+            const grid = document.getElementById('bestsellers-grid');
+            if (!grid) return;
+
+            const cards = grid.querySelectorAll('.bestseller-card');
+            const cardWidth = cards[0].offsetWidth + 24; // width + gap
+
+            grid.scrollBy({
+                left: direction * cardWidth * 2,
+                behavior: 'smooth'
+            });
+        }
+
+        // EXIT INTENT MODAL
+        const exitIntentModal = document.getElementById('exitIntentModal');
+        const closeExitModal = document.getElementById('closeExitModal');
+        const skipExitModal = document.getElementById('skipExitModal');
+        let exitIntentShown = false;
+
+        closeExitModal.addEventListener('click', () => {
+            exitIntentModal.classList.remove('show');
+            exitIntentShown = true;
+        });
+
+        skipExitModal.addEventListener('click', () => {
+            exitIntentModal.classList.remove('show');
+            exitIntentShown = true;
+        });
+
+        exitIntentModal.addEventListener('click', (e) => {
+            if (e.target === exitIntentModal || e.target.classList.contains('exit-intent-overlay')) {
+                exitIntentModal.classList.remove('show');
+                exitIntentShown = true;
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            if (!exitIntentShown && e.clientY < 0) {
+                exitIntentModal.classList.add('show');
+                exitIntentShown = true;
+            }
+        });
+
+        window.addEventListener('beforeunload', (e) => {
+            if (!exitIntentShown) {
+                exitIntentModal.classList.add('show');
+                exitIntentShown = true;
+                e.preventDefault();
+            }
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
