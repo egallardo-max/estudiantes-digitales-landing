@@ -1852,6 +1852,18 @@
             background-color: #f27979;
         }
 
+        .blob.escribania {
+            background-color: #8b6f47;
+        }
+
+        .blob.mediacion {
+            background-color: #d4956f;
+        }
+
+        .blob.compliance {
+            background-color: #5a7f9e;
+        }
+
         @keyframes blob-bounce {
             0% {
                 transform: translate(-100%, -100%) translate3d(0, 0, 0);
@@ -2017,10 +2029,22 @@
             box-shadow: 0 25px 70px rgba(43, 127, 133, 0.2);
             max-width: 520px;
             width: 90%;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
             animation: slideInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 10000;
+        }
+
+        @media (max-width: 480px) {
+            .exit-intent-container {
+                width: 95%;
+                max-height: 80vh;
+                border-radius: 16px;
+            }
+
+            .exit-intent-container::before {
+                display: none;
+            }
         }
 
         @keyframes slideInUp {
@@ -2064,6 +2088,12 @@
             padding: 48px 36px;
             color: #1a1a1a;
             text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .exit-intent-content {
+                padding: 32px 20px;
+            }
         }
 
         .exit-intent-header {
@@ -2171,15 +2201,37 @@
         }
 
         .exit-intent-btn-secondary {
-            background: rgba(242, 121, 121, 0.9);
+            background: #2b7f85;
             color: #ffffff;
-            box-shadow: 0 8px 20px rgba(242, 121, 121, 0.2);
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.3);
+            border: 1.5px solid #2b7f85;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exit-intent-btn-secondary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1) 0 1px,
+                transparent 1px 8px
+            );
+            opacity: 0;
+            transition: opacity 200ms cubic-bezier(0.2, 0.7, 0.3, 1);
+            pointer-events: none;
         }
 
         .exit-intent-btn-secondary:hover {
-            background: #f27979;
+            background: #206b71;
+            border-color: #206b71;
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(242, 121, 121, 0.3);
+            box-shadow: 0 12px 28px rgba(43, 127, 133, 0.4);
+        }
+
+        .exit-intent-btn-secondary:hover::before {
+            opacity: 1;
         }
 
         .exit-intent-skip {
@@ -2571,46 +2623,46 @@
         </div>
     </section>
 
-    <!-- SUMATE A LA COMUNIDAD -->
+    <!-- VOTA POR EL PRÓXIMO EFIP -->
     <section class="vote-section">
         <div class="vote-container">
-            <h3 class="vote-title">Sumate a la comunidad Aurora</h3>
-            <p class="vote-subtitle">Desarrolla tu EFIP con metodología probada. Acceso al grupo privado de tu carrera.</p>
+            <h3 class="vote-title">Vota por el próximo EFIP Aurora</h3>
+            <p class="vote-subtitle">Ayúdanos a definir cuál EFIP desarrollamos con Método Aurora. Sumate al grupo de espera y comunidad.</p>
 
             <div class="vote-options">
-                <!-- DERECHO CARD -->
+                <!-- ESCRIBANÍA CARD -->
                 <div class="community-card slide-in-left">
                     <div class="card-bg">
-                        <div class="blob derecho"></div>
+                        <div class="blob escribania"></div>
                     </div>
                     <div class="card-content">
-                        <h3>👨‍⚖️ Derecho</h3>
-                        <p>Comunidad de estudiantes y profes</p>
-                        <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="btn-community">Unirme</a>
+                        <h3>📜 Escribanía</h3>
+                        <p>Vota y sumate al grupo de espera</p>
+                        <button class="btn-community vote-btn-efip" data-efip="escribania">Votar</button>
                     </div>
                 </div>
 
-                <!-- CONTABILIDAD CARD -->
+                <!-- MEDIACIÓN CARD -->
                 <div class="community-card slide-in-top">
                     <div class="card-bg">
-                        <div class="blob contabilidad"></div>
+                        <div class="blob mediacion"></div>
                     </div>
                     <div class="card-content">
-                        <h3>💼 Contabilidad</h3>
-                        <p>Comunidad de estudiantes y profes</p>
-                        <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="btn-community">Unirme</a>
+                        <h3>⚖️ Mediación</h3>
+                        <p>Vota y sumate al grupo de espera</p>
+                        <button class="btn-community vote-btn-efip" data-efip="mediacion">Votar</button>
                     </div>
                 </div>
 
-                <!-- ADMINISTRACIÓN CARD -->
+                <!-- COMPLIANCE CARD -->
                 <div class="community-card slide-in-right">
                     <div class="card-bg">
-                        <div class="blob admin"></div>
+                        <div class="blob compliance"></div>
                     </div>
                     <div class="card-content">
-                        <h3>📊 Administración</h3>
-                        <p>Comunidad de estudiantes y profes</p>
-                        <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="btn-community">Unirme</a>
+                        <h3>🛡️ Compliance</h3>
+                        <p>Vota y sumate al grupo de espera</p>
+                        <button class="btn-community vote-btn-efip" data-efip="compliance">Votar</button>
                     </div>
                 </div>
             </div>
@@ -3203,6 +3255,52 @@
                 content_name: 'Comunidad Aurora Section',
                 content_type: 'section'
             });
+
+            // VOTA POR EL PRÓXIMO EFIP
+            const voteButtons = document.querySelectorAll('.vote-btn-efip');
+            const efipVotes = {
+                escribania: 0,
+                mediacion: 0,
+                compliance: 0
+            };
+
+            // Cargar votos desde localStorage
+            function loadEfipVotes() {
+                const savedVotes = localStorage.getItem('efipVotes');
+                if (savedVotes) {
+                    Object.assign(efipVotes, JSON.parse(savedVotes));
+                }
+            }
+
+            // Manejar voto
+            voteButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const efip = btn.getAttribute('data-efip');
+                    efipVotes[efip]++;
+                    localStorage.setItem('efipVotes', JSON.stringify(efipVotes));
+
+                    // Animación de voto
+                    btn.textContent = '✓ ¡Votado!';
+                    btn.style.background = '#c2e2cc';
+                    btn.style.color = '#2b7f85';
+                    btn.disabled = true;
+
+                    setTimeout(() => {
+                        btn.textContent = 'Votar';
+                        btn.style.background = '';
+                        btn.style.color = '';
+                        btn.disabled = false;
+                    }, 2000);
+
+                    // Track Meta Pixel
+                    fbq('track', 'ViewContent', {
+                        content_name: 'Vote Next EFIP: ' + efip,
+                        content_type: 'engagement'
+                    });
+                });
+            });
+
+            loadEfipVotes();
         });
 
         // EXIT INTENT MODAL - MULTIPLE TRIGGERS
