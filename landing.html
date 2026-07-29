@@ -436,15 +436,22 @@
         /* CURSOS GRID COMPACTO */
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
             margin-bottom: 2rem;
         }
 
         @media (max-width: 480px) {
             .courses-grid {
-                grid-template-columns: repeat(1, 1fr);
-                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.9rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
             }
         }
 
@@ -465,6 +472,7 @@
         @media (min-width: 1440px) {
             .courses-grid {
                 grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
             }
         }
 
@@ -567,7 +575,7 @@
 
         /* COURSE CONTENT */
         .course-content {
-            padding: 1rem;
+            padding: 0.9rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -575,43 +583,80 @@
             z-index: 1;
         }
 
+        /* COURSE TITLE + BADGE */
         .course-content h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
+            font-size: 1.15rem;
+            font-weight: 750;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
+            margin-bottom: 0.3rem;
+            line-height: 1.1;
         }
 
+        .course-content-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.7rem;
+        }
+
+        /* COURSE FEATURES ICONS */
+        .course-features {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .course-feature {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: rgba(43, 127, 133, 0.1);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: help;
+            transition: all 0.2s ease;
+        }
+
+        .course-feature:hover {
+            background: rgba(43, 127, 133, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* COURSE DESCRIPTION */
         .course-content p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray);
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            margin-bottom: 0.7rem;
             flex-grow: 1;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
-            line-clamp: 2;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
+        /* BUTTON */
         .course-content a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--primary), #206b71);
             color: var(--white);
-            padding: 0.6rem 1.2rem;
+            padding: 0.55rem 1rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 7px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-weight: 650;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(43, 127, 133, 0.2);
-            align-self: flex-start;
+            text-align: center;
+            width: 100%;
         }
 
         .course-content a:hover {
@@ -622,6 +667,27 @@
 
         .course-content a:active {
             transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .course-content h3 {
+                font-size: 1rem;
+            }
+
+            .course-feature {
+                width: 26px;
+                height: 26px;
+                font-size: 0.85rem;
+            }
+
+            .course-content p {
+                font-size: 0.7rem;
+            }
+
+            .course-content a {
+                font-size: 0.7rem;
+                padding: 0.5rem 0.9rem;
+            }
         }
 
         /* ANIMATION DELAYS */
@@ -2096,8 +2162,16 @@
                     <div class="course-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="course-content">
-                    <h3>Abogacía</h3>
-                    <p>Derecho Constitucional, Penal, Civil y Procesal. Con profes expertos. 98% aprueba.</p>
+                    <div class="course-content-header">
+                        <h3>Abogacía</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Método Aurora">✨</div>
+                        <div class="course-feature" title="Videos">🎥</div>
+                        <div class="course-feature" title="Quiz & Juegos">🎮</div>
+                        <div class="course-feature" title="Prácticos">📝</div>
+                    </div>
+                    <p>Derecho Constitucional, Penal, Civil y Procesal. Con profes expertos.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/product/EDefip1" target="_blank">Ver detalles</a>
                 </div>
             </div>
@@ -2109,7 +2183,15 @@
                     <div class="course-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="course-content">
-                    <h3>Abogacía</h3>
+                    <div class="course-content-header">
+                        <h3>Abogacía</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Método Aurora">✨</div>
+                        <div class="course-feature" title="Videos">🎥</div>
+                        <div class="course-feature" title="Quiz & Juegos">🎮</div>
+                        <div class="course-feature" title="Prácticos">📝</div>
+                    </div>
                     <p>Familia, Sucesiones, Laboral, Procedimiento. Método Aurora®.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/product/EFIP2-ED" target="_blank">Ver detalles</a>
                 </div>
@@ -2122,8 +2204,16 @@
                     <div class="course-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="course-content">
-                    <h3>Contabilidad</h3>
-                    <p>Contabilidad completa para Contadores. Balance, Auditoría. 120 días acceso.</p>
+                    <div class="course-content-header">
+                        <h3>Contabilidad</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Método Aurora">✨</div>
+                        <div class="course-feature" title="Videos">🎥</div>
+                        <div class="course-feature" title="Quiz & Juegos">🎮</div>
+                        <div class="course-feature" title="Prácticos">📝</div>
+                    </div>
+                    <p>Contabilidad completa para Contadores. Balance, Auditoría.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/product/efip1contador2026" target="_blank">Ver detalles</a>
                 </div>
             </div>
@@ -2135,8 +2225,16 @@
                     <div class="course-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="course-content">
-                    <h3>Administración</h3>
-                    <p>Administración, Proyectos, Marketing, Finanzas. Aplicable desde día 1.</p>
+                    <div class="course-content-header">
+                        <h3>Administración</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Método Aurora">✨</div>
+                        <div class="course-feature" title="Videos">🎥</div>
+                        <div class="course-feature" title="Quiz & Juegos">🎮</div>
+                        <div class="course-feature" title="Prácticos">📝</div>
+                    </div>
+                    <p>Administración, Proyectos, Marketing, Finanzas.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/product/efip1administracion" target="_blank">Ver detalles</a>
                 </div>
             </div>
@@ -2148,8 +2246,16 @@
                     <div class="course-stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="course-content">
-                    <h3>Seminario Final</h3>
-                    <p>Nota a Fallo: videoclases, guías y planificadores. Método Aurora®.</p>
+                    <div class="course-content-header">
+                        <h3>Seminario Final</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Método Aurora">✨</div>
+                        <div class="course-feature" title="Videos">🎥</div>
+                        <div class="course-feature" title="Guías">📄</div>
+                        <div class="course-feature" title="Planificadores">📅</div>
+                    </div>
+                    <p>Nota a Fallo: videoclases, guías y planificadores completos.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/product/cursoseminariofinal" target="_blank">Ver detalles</a>
                 </div>
             </div>
@@ -2161,8 +2267,16 @@
                     <div class="course-stars">✨✨✨</div>
                 </div>
                 <div class="course-content">
-                    <h3>Más Cursos</h3>
-                    <p>Explora nuestra oferta completa. Nuevos cursos, seminarios y especializaciones.</p>
+                    <div class="course-content-header">
+                        <h3>Más Cursos</h3>
+                    </div>
+                    <div class="course-features">
+                        <div class="course-feature" title="Aurora">✨</div>
+                        <div class="course-feature" title="Comunidad">👥</div>
+                        <div class="course-feature" title="Especializaciones">🎓</div>
+                        <div class="course-feature" title="Actualizado">🆕</div>
+                    </div>
+                    <p>Nuevos cursos, seminarios y especializaciones.</p>
                     <a href="https://estudiantesdigitales.wisboo.com/catalog" target="_blank">Explorar catálogo</a>
                 </div>
             </div>
