@@ -98,6 +98,38 @@
             }
         }
 
+        @keyframes slideInLeftFade {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRightFade {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-left {
+            animation: slideInLeftFade 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fade-in-right {
+            animation: slideInRightFade 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
         @keyframes countUp {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -1435,6 +1467,11 @@
             margin: 0;
         }
 
+        .vote-section.animate-in .fade-in-left,
+        .vote-section.animate-in .fade-in-right {
+            animation-play-state: running;
+        }
+
         .vote-container {
             max-width: 900px;
             margin: 0 auto;
@@ -1481,12 +1518,24 @@
             transition: all 0.3s ease;
             font-family: 'Poppins', sans-serif;
             min-height: 110px;
+            text-decoration: none;
+        }
+
+        .vote-btn-link {
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .vote-btn:hover {
             border-color: var(--secondary);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(242, 121, 121, 0.15);
+            background: linear-gradient(135deg, rgba(242, 121, 121, 0.05) 0%, rgba(194, 226, 204, 0.05) 100%);
+        }
+
+        .vote-btn-link:hover {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(242, 121, 121, 0.1) 0%, rgba(194, 226, 204, 0.05) 100%);
         }
 
         .vote-btn:active {
@@ -1502,8 +1551,16 @@
         .vote-option-title {
             font-weight: 600;
             font-size: 0.95rem;
-            color: var(--text-dark);
+            color: var(--primary);
             line-height: 1.3;
+        }
+
+        .vote-btn-link .vote-option-title {
+            color: var(--primary);
+        }
+
+        .vote-btn:hover .vote-option-title {
+            color: var(--secondary);
         }
 
         .vote-btn.voted .vote-option-title {
@@ -1514,6 +1571,14 @@
             font-size: 0.85rem;
             color: var(--gray);
             font-weight: 500;
+        }
+
+        .vote-btn-link .vote-option-count {
+            color: var(--gray);
+        }
+
+        .vote-btn:hover .vote-option-count {
+            color: var(--secondary);
         }
 
         .vote-btn.voted .vote-option-count {
@@ -2002,32 +2067,32 @@
         </div>
     </section>
 
-    <!-- VOTACIÓN PRÓXIMOS EFIP -->
+    <!-- SUMATE A LA COMUNIDAD -->
     <section class="vote-section">
         <div class="vote-container">
-            <h3 class="vote-title">Vota por el próximo EFIP</h3>
-            <p class="vote-subtitle">Ayúdanos a priorizar cuál EFIP abrir primero</p>
+            <h3 class="vote-title fade-in-left">Sumate a la comunidad Aurora</h3>
+            <p class="vote-subtitle fade-in-right">Desarrolla tu EFIP con metodología probada. Acceso al grupo privado de tu carrera.</p>
 
             <div class="vote-options">
-                <div class="vote-option">
-                    <button class="vote-btn" data-efip="escribania">
-                        <span class="vote-option-title">Escribanía Notarial</span>
-                        <span class="vote-option-count" id="count-escribania">0 votos</span>
-                    </button>
+                <div class="vote-option fade-in-left" style="animation-delay: 0.1s;">
+                    <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="vote-btn vote-btn-link">
+                        <span class="vote-option-title">Derecho</span>
+                        <span class="vote-option-count">Únete a la comunidad</span>
+                    </a>
                 </div>
 
-                <div class="vote-option">
-                    <button class="vote-btn" data-efip="mediacion">
-                        <span class="vote-option-title">Mediación y Resolución de Conflictos</span>
-                        <span class="vote-option-count" id="count-mediacion">0 votos</span>
-                    </button>
+                <div class="vote-option fade-in-right" style="animation-delay: 0.2s;">
+                    <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="vote-btn vote-btn-link">
+                        <span class="vote-option-title">Contabilidad</span>
+                        <span class="vote-option-count">Únete a la comunidad</span>
+                    </a>
                 </div>
 
-                <div class="vote-option">
-                    <button class="vote-btn" data-efip="compliance">
-                        <span class="vote-option-title">Compliance y Regulación</span>
-                        <span class="vote-option-count" id="count-compliance">0 votos</span>
-                    </button>
+                <div class="vote-option fade-in-left" style="animation-delay: 0.3s;">
+                    <a href="https://chat.whatsapp.com/KbCFdjK2O4PAYzsH8fYn71" target="_blank" rel="noopener noreferrer" class="vote-btn vote-btn-link">
+                        <span class="vote-option-title">Administración</span>
+                        <span class="vote-option-count">Únete a la comunidad</span>
+                    </a>
                 </div>
             </div>
 
@@ -2195,8 +2260,8 @@
 
     <!-- TESTIMONIOS CAROUSEL HORIZONTAL -->
     <section class="section">
-        <h2 class="section-title">Quiénes llegaron tranquilos</h2>
-        <p class="section-subtitle">37 historias reales de estudiantes que se recibieron con nosotros</p>
+        <h2 class="section-title">Qué dicen nuestra comunidad</h2>
+        <p class="section-subtitle">Historias entre más de 4000 estudiantes que ya rindieron su EFIP</p>
 
         <div class="testimonials-wrapper">
             <div class="testimonials-container" id="testimonials-carousel">
@@ -2588,66 +2653,28 @@
             });
         }
 
-        // VOTACIÓN PRÓXIMOS EFIP
-        const voteButtons = document.querySelectorAll('.vote-btn');
-        const voteMessage = document.getElementById('vote-message');
-        const voteData = {
-            escribania: 0,
-            mediacion: 0,
-            compliance: 0
-        };
+        // SUMATE A LA COMUNIDAD - SCROLL ANIMATION
+        document.addEventListener('DOMContentLoaded', () => {
+            const voteSection = document.querySelector('.vote-section');
+            if (voteSection) {
+                const voteObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-in');
+                            voteObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
 
-        // Cargar votos desde localStorage
-        function loadVotes() {
-            const savedVotes = localStorage.getItem('efipVotes');
-            if (savedVotes) {
-                Object.assign(voteData, JSON.parse(savedVotes));
-                updateVoteDisplay();
+                voteObserver.observe(voteSection);
             }
-        }
 
-        // Actualizar visualización de votos
-        function updateVoteDisplay() {
-            Object.keys(voteData).forEach(efip => {
-                const count = document.getElementById(`count-${efip}`);
-                const number = voteData[efip];
-                count.textContent = number === 1 ? '1 voto' : `${number} votos`;
-            });
-        }
-
-        // Manejar voto
-        voteButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const efip = btn.getAttribute('data-efip');
-                voteData[efip]++;
-                localStorage.setItem('efipVotes', JSON.stringify(voteData));
-                updateVoteDisplay();
-
-                // Mostrar confirmación
-                btn.classList.add('voted');
-                voteMessage.textContent = '✓ ¡Gracias por tu voto!';
-                voteMessage.classList.add('show');
-
-                // Deshabilitar otros botones temporalmente
-                voteButtons.forEach(b => b.disabled = true);
-
-                // Reactivar después de 2 segundos
-                setTimeout(() => {
-                    btn.classList.remove('voted');
-                    voteMessage.classList.remove('show');
-                    voteButtons.forEach(b => b.disabled = false);
-                }, 2000);
-
-                // Track Meta Pixel
-                fbq('track', 'ViewContent', {
-                    content_name: 'Vote EFIP: ' + efip,
-                    content_type: 'engagement'
-                });
+            // Track section view
+            fbq('track', 'ViewContent', {
+                content_name: 'Comunidad Aurora Section',
+                content_type: 'section'
             });
         });
-
-        // Cargar votos al iniciar
-        loadVotes();
 
         // EXIT INTENT MODAL
         const exitIntentModal = document.getElementById('exitIntentModal');
