@@ -58,6 +58,139 @@
             color: var(--text-dark);
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
+            padding-top: 60px;
+        }
+
+        /* PROMO BANNER */
+        .promo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9998;
+            background: linear-gradient(135deg, #d8a5d9 0%, #c495d4 50%, #a8b5e0 100%);
+            padding: 14px 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .promo-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .promo-emoji {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .promo-text {
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+        }
+
+        .promo-text strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .close-banner {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .close-banner:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .close-banner:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .promo-banner.hidden {
+            display: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .promo-banner {
+                background: linear-gradient(135deg, #8b5fa8 0%, #7a4fa0 50%, #6b6fb8 100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+
+            .promo-banner {
+                padding: 12px 16px;
+            }
+
+            .promo-banner-content {
+                gap: 8px;
+            }
+
+            .promo-text {
+                font-size: 0.85rem;
+            }
+
+            .promo-emoji {
+                font-size: 1rem;
+            }
+
+            .close-banner {
+                position: static;
+                transform: none;
+                margin-left: 8px;
+                width: 28px;
+                height: 28px;
+                font-size: 1.2rem;
+            }
+
+            .close-banner:hover {
+                transform: scale(1.1);
+            }
+
+            .close-banner:active {
+                transform: scale(0.95);
+            }
         }
 
         /* ANIMACIONES GLOBALES */
@@ -2037,6 +2170,15 @@
 </head>
 <body>
 
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+        <div class="promo-banner-content">
+            <span class="promo-emoji">📚</span>
+            <span class="promo-text"><strong>Mes de la Abogacía</strong> // Usá el código <strong>AGOSTO</strong> y llevate <strong>20% OFF</strong> en todos los cursos</span>
+            <button id="closeBanner" class="close-banner" aria-label="Cerrar banner">×</button>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header>
         <div class="header-container">
@@ -2596,6 +2738,37 @@
 
     <!-- SCRIPTS -->
     <script>
+        // PROMO BANNER FUNCTIONALITY
+        document.addEventListener('DOMContentLoaded', () => {
+            const promoBanner = document.querySelector('.promo-banner');
+            const closeBannerBtn = document.getElementById('closeBanner');
+
+            if (closeBannerBtn) {
+                closeBannerBtn.addEventListener('click', () => {
+                    promoBanner.classList.add('hidden');
+                    localStorage.setItem('promoBannerClosed', 'true');
+                    fbq('track', 'ViewContent', {
+                        content_name: 'Promo Banner Closed',
+                        content_type: 'engagement'
+                    });
+                });
+            }
+
+            // Check if banner was previously closed
+            if (localStorage.getItem('promoBannerClosed') === 'true') {
+                promoBanner.classList.add('hidden');
+            }
+
+            // Track banner impression
+            fbq('track', 'ViewContent', {
+                content_name: 'Promo Banner Shown',
+                content_type: 'engagement',
+                content_data: {
+                    promo: 'Agosto 20% OFF'
+                }
+            });
+        });
+
         // META PIXEL TRACKING EVENTS
         document.addEventListener('DOMContentLoaded', () => {
             // Track course card views
