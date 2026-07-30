@@ -297,10 +297,10 @@
         }
 
         .typewriter-text {
-            border-right: 3px solid var(--secondary);
-            overflow: hidden;
+            border-right: none;
+            overflow: visible;
             display: inline-block;
-            animation: typewriter 4s steps(80, end) 0.3s forwards, blink 0.6s infinite 4.3s;
+            animation: none;
             white-space: normal;
             word-wrap: break-word;
             max-width: 100%;
@@ -1800,28 +1800,28 @@
 
         .community-card {
             position: relative;
-            width: 220px;
-            height: 280px;
-            border-radius: 16px;
+            width: 180px;
+            height: 220px;
+            border-radius: 14px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+            box-shadow: 16px 16px 48px #bebebe, -16px -16px 48px #ffffff;
             z-index: 10;
         }
 
         .card-bg {
             position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 210px;
-            height: 270px;
+            top: 4px;
+            left: 4px;
+            width: 172px;
+            height: 212px;
             z-index: 2;
             background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(24px);
-            border-radius: 12px;
+            border-radius: 11px;
             overflow: hidden;
             outline: 2px solid white;
             display: flex;
@@ -1963,15 +1963,15 @@
         }
 
         .slide-in-left {
-            animation: slideInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+            animation: none;
         }
 
         .slide-in-top {
-            animation: slideInTop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+            animation: none;
         }
 
         .slide-in-right {
-            animation: slideInRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+            animation: none;
         }
 
         @media (max-width: 768px) {
@@ -2626,8 +2626,8 @@
     <!-- VOTA POR EL PRÓXIMO EFIP -->
     <section class="vote-section">
         <div class="vote-container">
-            <h3 class="vote-title">Vota por el próximo EFIP Aurora</h3>
-            <p class="vote-subtitle">Ayúdanos a definir cuál EFIP desarrollamos con Método Aurora. Sumate al grupo de espera y comunidad.</p>
+            <h3 class="vote-title">No encuentras tu EFIP??</h3>
+            <p class="vote-subtitle">Vota por el próximo EFIP Aurora que queremos desarrollar. Sumate al grupo de espera.</p>
 
             <div class="vote-options">
                 <!-- ESCRIBANÍA CARD -->
@@ -2977,7 +2977,7 @@
 
     <!-- FLOATING HELP BUTTON -->
     <div id="floatingHelpButton" class="floating-help-button">
-        <button id="helpBtnToggle" class="help-btn-main">?</button>
+        <button id="helpBtnToggle" class="help-btn-main" title="Te ayudo?">?</button>
         <div class="help-menu" id="helpMenu">
             <a href="https://wa.me/542634621570?text=Hola%20Estudiantes%20Digitales,%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="help-option">
                 <span class="help-option-icon">💬</span>
@@ -3359,11 +3359,11 @@
             }
         }, 20000);
 
-        // TRIGGER 2: Scroll-based (50%)
+        // TRIGGER 2: Scroll-based (60%)
         window.addEventListener('scroll', () => {
             if (!scrollTriggered && !exitIntentShown) {
                 const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                if (scrollPercent >= 50) {
+                if (scrollPercent >= 60) {
                     scrollTriggered = true;
                     showExitIntentModal();
                 }
