@@ -1789,208 +1789,121 @@
             }
         }
 
-        /* COMMUNITY CARDS - UIVERSE INSPIRED */
+        /* VOTE DROPDOWN */
         .vote-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            display: flex;
+            justify-content: center;
             margin-bottom: 2rem;
-            justify-items: center;
         }
 
-        .community-card {
+        .vote-dropdown-wrapper {
             position: relative;
-            width: 180px;
-            height: 220px;
-            border-radius: 14px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 16px 16px 48px #bebebe, -16px -16px 48px #ffffff;
-            z-index: 10;
-        }
-
-        .card-bg {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 172px;
-            height: 212px;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(24px);
-            border-radius: 11px;
-            overflow: hidden;
-            outline: 2px solid white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .blob {
-            position: absolute;
-            z-index: 1;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            opacity: 0.8;
-            filter: blur(20px);
-            animation: blob-bounce 5s infinite ease;
-        }
-
-        .blob.derecho {
-            background-color: #2b7f85;
-        }
-
-        .blob.contabilidad {
-            background-color: #c2e2cc;
-        }
-
-        .blob.admin {
-            background-color: #f27979;
-        }
-
-        .blob.escribania {
-            background-color: #8b6f47;
-        }
-
-        .blob.mediacion {
-            background-color: #d4956f;
-        }
-
-        .blob.compliance {
-            background-color: #5a7f9e;
-        }
-
-        @keyframes blob-bounce {
-            0% {
-                transform: translate(-100%, -100%) translate3d(0, 0, 0);
-            }
-            25% {
-                transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-            }
-            50% {
-                transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-            }
-            75% {
-                transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-            }
-            100% {
-                transform: translate(-100%, -100%) translate3d(0, 0, 0);
-            }
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .card-content h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2b7f85;
-            margin: 0;
-        }
-
-        .card-content p {
-            font-size: 0.8rem;
-            color: #666;
-            margin: 0;
-        }
-
-        .btn-community {
             display: inline-block;
+        }
+
+        .vote-main-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
             background: linear-gradient(135deg, #2b7f85, #c2e2cc);
             color: #ffffff;
-            padding: 0.6rem 1.4rem;
-            border-radius: 8px;
-            text-decoration: none;
+            border: none;
+            border-radius: 10px;
             font-weight: 650;
-            font-size: 0.85rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: none;
-            box-shadow: 0 4px 12px rgba(43, 127, 133, 0.2);
-            margin-top: 8px;
+            box-shadow: 0 6px 20px rgba(43, 127, 133, 0.3);
+            font-family: 'Poppins', sans-serif;
         }
 
-        .btn-community:hover {
+        .vote-main-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.3);
+            box-shadow: 0 10px 28px rgba(43, 127, 133, 0.4);
         }
 
-        /* SLIDE IN ANIMATIONS */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .vote-main-btn:active {
+            transform: translateY(-1px);
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .vote-main-btn::after {
+            content: "▼";
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes slideInTop {
-            from {
-                opacity: 0;
-                transform: translateY(-60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .vote-main-btn.active::after {
+            transform: rotate(180deg);
         }
 
-        .slide-in-left {
-            animation: none;
+        .vote-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            border: 2px solid #2b7f85;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 280px;
+            overflow: hidden;
         }
 
-        .slide-in-top {
-            animation: none;
+        .vote-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
         }
 
-        .slide-in-right {
-            animation: none;
+        .vote-option-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 16px;
+            background: #ffffff;
+            color: #2b7f85;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .vote-option-btn:last-child {
+            border-bottom: none;
+        }
+
+        .vote-option-btn:hover {
+            background: #f0f8fa;
+            padding-left: 20px;
+        }
+
+        .vote-option-btn:active {
+            background: #e8f3f5;
         }
 
         @media (max-width: 768px) {
-            .community-card {
-                width: 200px;
-                height: 260px;
+            .vote-main-btn {
+                padding: 12px 24px;
+                font-size: 0.95rem;
             }
 
-            .card-bg {
-                width: 190px;
-                height: 250px;
+            .vote-dropdown {
+                min-width: 260px;
             }
 
-            .card-content h3 {
-                font-size: 1rem;
-            }
-
-            .card-content p {
-                font-size: 0.75rem;
+            .vote-option-btn {
+                padding: 12px 14px;
+                font-size: 0.9rem;
             }
         }
 
@@ -2630,39 +2543,13 @@
             <p class="vote-subtitle">Vota por el próximo EFIP Aurora que queremos desarrollar. Sumate al grupo de espera.</p>
 
             <div class="vote-options">
-                <!-- ESCRIBANÍA CARD -->
-                <div class="community-card slide-in-left">
-                    <div class="card-bg">
-                        <div class="blob escribania"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>📜 Escribanía</h3>
-                        <p>Vota y sumate al grupo de espera</p>
-                        <button class="btn-community vote-btn-efip" data-efip="escribania">Votar</button>
-                    </div>
-                </div>
+                <div class="vote-dropdown-wrapper">
+                    <button id="voteMainBtn" class="vote-main-btn">Votar por tu EFIP</button>
 
-                <!-- MEDIACIÓN CARD -->
-                <div class="community-card slide-in-top">
-                    <div class="card-bg">
-                        <div class="blob mediacion"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>⚖️ Mediación</h3>
-                        <p>Vota y sumate al grupo de espera</p>
-                        <button class="btn-community vote-btn-efip" data-efip="mediacion">Votar</button>
-                    </div>
-                </div>
-
-                <!-- COMPLIANCE CARD -->
-                <div class="community-card slide-in-right">
-                    <div class="card-bg">
-                        <div class="blob compliance"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3>🛡️ Compliance</h3>
-                        <p>Vota y sumate al grupo de espera</p>
-                        <button class="btn-community vote-btn-efip" data-efip="compliance">Votar</button>
+                    <div id="voteDropdown" class="vote-dropdown">
+                        <button class="vote-option-btn" data-efip="escribania">📜 Escribanía Notarial</button>
+                        <button class="vote-option-btn" data-efip="mediacion">⚖️ Mediación y Resolución de Conflictos</button>
+                        <button class="vote-option-btn" data-efip="compliance">🛡️ Compliance y Regulación</button>
                     </div>
                 </div>
             </div>
@@ -3301,6 +3188,60 @@
             });
 
             loadEfipVotes();
+
+            // DROPDOWN VOTING FUNCTIONALITY
+            const voteMainBtn = document.getElementById('voteMainBtn');
+            const voteDropdown = document.getElementById('voteDropdown');
+            const voteOptionBtns = document.querySelectorAll('.vote-option-btn');
+
+            if (voteMainBtn && voteDropdown) {
+                // Toggle dropdown on main button click
+                voteMainBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    voteDropdown.classList.toggle('show');
+                    voteMainBtn.classList.toggle('active');
+                });
+
+                // Handle vote option clicks
+                voteOptionBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const efip = btn.getAttribute('data-efip');
+
+                        // Update vote count
+                        efipVotes[efip]++;
+                        localStorage.setItem('efipVotes', JSON.stringify(efipVotes));
+
+                        // Show feedback on button
+                        const originalText = btn.textContent;
+                        btn.textContent = '✓ Votado';
+                        btn.style.color = '#c2e2cc';
+
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.color = '';
+                        }, 1500);
+
+                        // Close dropdown
+                        voteDropdown.classList.remove('show');
+                        voteMainBtn.classList.remove('active');
+
+                        // Track Meta Pixel
+                        fbq('track', 'ViewContent', {
+                            content_name: 'Vote: ' + efip,
+                            content_type: 'engagement'
+                        });
+                    });
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.vote-dropdown-wrapper')) {
+                        voteDropdown.classList.remove('show');
+                        voteMainBtn.classList.remove('active');
+                    }
+                });
+            }
         });
 
         // EXIT INTENT MODAL - MULTIPLE TRIGGERS
