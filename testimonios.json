@@ -60,7 +60,8 @@
   "configuracion": {
     "descuento": "30%",
     "descuentoTexto": "Recibe 30% de descuento en tu próximo curso o masterclass",
-    "emailContacto": "hola@estudiantesdigitales.com",
-    "formularioUrl": "https://formspree.io/f/YOUR_FORM_ID"
+    "emailPrincipal": "academiaestudiantesdigitales@gmail.com",
+    "emailSecundario": "egallardo@tentsile.cl",
+    "formularioId": "xyzabc"
   }
 }
