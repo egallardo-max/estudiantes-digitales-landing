@@ -3460,11 +3460,11 @@
                 <div class="form-group">
                     <label>¿Cuántas estrellas nos das?</label>
                     <div class="star-rating" id="starRating">
-                        <span class="star" data-value="1">⭐</span>
-                        <span class="star" data-value="2">⭐</span>
-                        <span class="star" data-value="3">⭐</span>
-                        <span class="star" data-value="4">⭐</span>
-                        <span class="star" data-value="5">⭐</span>
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
                     </div>
                     <input type="hidden" id="rating" name="rating" value="0">
                 </div>
@@ -4026,8 +4026,12 @@
                 stars.forEach(s => {
                     if (s.dataset.value <= value) {
                         s.classList.add('active');
+                        s.textContent = '⭐';
+                        s.style.color = '#ffc107';
                     } else {
                         s.classList.remove('active');
+                        s.textContent = '☆';
+                        s.style.color = '#ddd';
                     }
                 });
 
@@ -4042,8 +4046,10 @@
                 const value = star.dataset.value;
                 stars.forEach(s => {
                     if (s.dataset.value <= value) {
+                        s.textContent = '⭐';
                         s.style.color = '#ffc107';
                     } else {
+                        s.textContent = '☆';
                         s.style.color = '#ddd';
                     }
                 });
@@ -4053,8 +4059,10 @@
         starRating.addEventListener('mouseleave', () => {
             stars.forEach(s => {
                 if (s.classList.contains('active')) {
+                    s.textContent = '⭐';
                     s.style.color = '#ffc107';
                 } else {
+                    s.textContent = '☆';
                     s.style.color = '#ddd';
                 }
             });
