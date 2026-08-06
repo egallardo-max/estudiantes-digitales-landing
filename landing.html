@@ -4237,11 +4237,16 @@
             ]
         };
 
+        let notificationShown = false;
+        let firstNotificationTimeout;
+        const isMobile = window.innerWidth < 768;
+
         function getRandomItem(array) {
             return array[Math.floor(Math.random() * array.length)];
         }
 
         function showPurchaseNotification() {
+            notificationShown = true;
             const nombre = getRandomItem(purchaseData.nombres);
             const curso = getRandomItem(purchaseData.cursos);
             const ciudad = getRandomItem(purchaseData.ciudades);
@@ -4267,11 +4272,31 @@
             }, 4000);
         }
 
-        // First notification at 15 seconds, then every 30 seconds
-        setTimeout(() => {
+        // Desktop: First notification at 15 seconds
+        // Mobile: First notification at 50 seconds OR on user exit attempt
+        const initialDelay = isMobile ? 50000 : 15000;
+
+        firstNotificationTimeout = setTimeout(() => {
             showPurchaseNotification();
             setInterval(showPurchaseNotification, 30000);
-        }, 15000);
+        }, initialDelay);
+
+        // Mobile: Show notification on exit/back attempt
+        if (isMobile) {
+            window.addEventListener('beforeunload', (e) => {
+                if (!notificationShown) {
+                    clearTimeout(firstNotificationTimeout);
+                    showPurchaseNotification();
+                }
+            });
+
+            window.addEventListener('popstate', () => {
+                if (!notificationShown) {
+                    clearTimeout(firstNotificationTimeout);
+                    showPurchaseNotification();
+                }
+            });
+        }
     </script>
 
 </body>
