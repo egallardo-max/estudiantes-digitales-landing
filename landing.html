@@ -2047,11 +2047,8 @@
             flex-direction: column;
             gap: 4px;
             padding: 16px;
-            background: linear-gradient(135deg, rgba(43, 127, 133, 0.1), rgba(43, 127, 133, 0.05));
-            border: 2px solid #2b7f85;
             border-radius: 12px;
             text-decoration: none;
-            color: #2b7f85;
             font-weight: 600;
             font-size: 0.95rem;
             cursor: pointer;
@@ -2059,12 +2056,64 @@
             text-align: center;
         }
 
-        .community-group-btn:hover {
+        /* EFIP Derecho 1 - Verde-azul (primary) */
+        .community-group-btn:nth-child(1) {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.12), rgba(43, 127, 133, 0.06));
+            border: 2px solid #2b7f85;
+            color: #2b7f85;
+        }
+
+        .community-group-btn:nth-child(1):hover {
             background: linear-gradient(135deg, #2b7f85, #206b71);
             color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.25);
             border-color: #206b71;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.3);
+        }
+
+        /* EFIP Derecho 2 - Coral/Rojo (secondary) */
+        .community-group-btn:nth-child(2) {
+            background: linear-gradient(135deg, rgba(242, 121, 121, 0.12), rgba(242, 121, 121, 0.06));
+            border: 2px solid #f27979;
+            color: #d45555;
+        }
+
+        .community-group-btn:nth-child(2):hover {
+            background: linear-gradient(135deg, #f27979, #e85555);
+            color: #ffffff;
+            border-color: #e85555;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(242, 121, 121, 0.3);
+        }
+
+        /* EFIP Contabilidad - Verde pastel (accent-green) */
+        .community-group-btn:nth-child(3) {
+            background: linear-gradient(135deg, rgba(194, 226, 204, 0.2), rgba(194, 226, 204, 0.1));
+            border: 2px solid #a8d5ba;
+            color: #2b7f85;
+        }
+
+        .community-group-btn:nth-child(3):hover {
+            background: linear-gradient(135deg, #a8d5ba, #7fbfaa);
+            color: #ffffff;
+            border-color: #7fbfaa;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(194, 226, 204, 0.4);
+        }
+
+        /* EFIP Administración - Azul complementario */
+        .community-group-btn:nth-child(4) {
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.15), rgba(32, 107, 113, 0.08));
+            border: 2px solid #206b71;
+            color: #206b71;
+        }
+
+        .community-group-btn:nth-child(4):hover {
+            background: linear-gradient(135deg, #206b71, #164852);
+            color: #ffffff;
+            border-color: #164852;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(32, 107, 113, 0.3);
         }
 
         .group-title {
@@ -2724,33 +2773,13 @@
 
             <div class="exit-intent-content">
                 <div class="exit-intent-header">
-                    <h2 class="exit-intent-title">Antes de irte...</h2>
-                    <p class="exit-intent-subtitle">Únete a una comunidad de estudiantes y profesionales</p>
+                    <h2 class="exit-intent-title">🎓 Sumate gratis a tu comunidad de estudio</h2>
                 </div>
 
                 <div class="exit-intent-main">
                     <p class="exit-intent-description">
-                        Acceso a grupos privados donde compartimos material, resolvemos dudas, dictamos clases gratuitas y capacitaciones especializadas. Estudiantes y profesionales que te bancan, te apoyan y están en la misma que vos. Completamente gratuito.
+                        Elegí tu grupo y accedé a material exclusivo, clases gratis, capacitaciones y una comunidad de estudiantes y profesionales que te acompaña, te da una mano y está en la misma que vos.
                     </p>
-
-                    <div class="exit-intent-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span class="feature-text">Estudiantes y profesionales que te bancan</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span class="feature-text">Material de estudio e interés profesional</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span class="feature-text">Resolución de dudas frecuentes</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span class="feature-text">Clases gratuitas y capacitaciones especializadas</span>
-                        </div>
-                    </div>
                 </div>
 
                 <div id="communityGroups" class="community-groups">
