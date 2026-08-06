@@ -4328,19 +4328,23 @@
             }, 4000);
         }
 
-        // Intersection Observer: Trigger notifications when courses section is visible
+        // Intersection Observer: Trigger notifications when courses section becomes visible
         const cursosSection = document.getElementById('cursos');
+        let notificationsStarted = false;
+
         if (cursosSection) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && notificationCount === 0) {
+                    if (entry.isIntersecting && !notificationsStarted) {
+                        notificationsStarted = true;
+                        console.log('Cursos section visible - Starting notifications');
                         // First notification when courses section appears
                         showPurchaseNotification();
                         // Subsequent notifications every 15 seconds
                         notificationInterval = setInterval(() => {
                             if (notificationCount >= MAX_NOTIFICATIONS) {
                                 clearInterval(notificationInterval);
-                                observer.disconnect();
+                                console.log('Max notifications reached');
                                 return;
                             }
                             showPurchaseNotification();
@@ -4349,7 +4353,7 @@
                         observer.disconnect();
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.01, rootMargin: '100px 0px 100px 0px' });
 
             observer.observe(cursosSection);
         }
