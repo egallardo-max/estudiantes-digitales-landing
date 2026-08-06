@@ -2860,7 +2860,7 @@
             position: fixed;
             bottom: 24px;
             left: 24px;
-            z-index: 7000;
+            z-index: 8500;
             background: white;
             border-radius: 12px;
             padding: 12px 16px;
@@ -4246,56 +4246,43 @@
             }
         });
 
-        // PURCHASE NOTIFICATIONS SYSTEM
-        const purchaseData = {
-            nombres: [
-                'Andrea Cabutti',
-                'Ale Mijoc',
-                'Cristian Álvarez',
-                'Eve Silberstein',
-                'María Fernanda',
-                'Eugenio Gallardo'
-            ],
-            cursos: [
-                'EFIP 1 Derecho',
-                'EFIP 2 Derecho',
-                'EFIP 1 Contabilidad',
-                'EFIP 1 Administración',
-                'Seminario Final'
-            ],
-            ciudades: [
-                'Córdoba',
-                'Buenos Aires',
-                'Mendoza',
-                'Rosario',
-                'La Plata',
-                'San Juan',
-                'Tucumán',
-                'Santiago del Estero'
-            ]
+        // ========================================
+        // SISTEMA DE NOTIFICACIONES DE COMPRA
+        // Diferente del EXIT-INTENT popup
+        // ========================================
+
+        console.log('🚀 Purchase Notifications System iniciando...');
+
+        const PURCHASE_DATA = {
+            nombres: ['Andrea Cabutti', 'Ale Mijoc', 'Cristian Álvarez', 'Eve Silberstein', 'María Fernanda', 'Eugenio Gallardo'],
+            cursos: ['EFIP 1 Derecho', 'EFIP 2 Derecho', 'EFIP 1 Contabilidad', 'EFIP 1 Administración', 'Seminario Final'],
+            ciudades: ['Córdoba', 'Buenos Aires', 'Mendoza', 'Rosario', 'La Plata', 'San Juan', 'Tucumán', 'Santiago del Estero']
         };
 
-        let notificationShown = false;
-        let firstNotificationTimeout;
-        let notificationCount = 0;
-        let notificationInterval;
-        const isMobile = window.innerWidth < 768;
-        const MAX_NOTIFICATIONS = 4;
+        let purchaseNotificationCount = 0;
+        let purchaseNotificationStarted = false;
+        let purchaseNotificationInterval = null;
 
-        function getRandomItem(array) {
-            return array[Math.floor(Math.random() * array.length)];
+        function getRandomPurchaseItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
         }
 
         function showPurchaseNotification() {
-            notificationShown = true;
-            notificationCount++;
-            const nombre = getRandomItem(purchaseData.nombres);
-            const curso = getRandomItem(purchaseData.cursos);
-            const ciudad = getRandomItem(purchaseData.ciudades);
+            if (purchaseNotificationCount >= 4) {
+                console.log('🛑 Max 4 notifications reached');
+                return;
+            }
 
-            const notification = document.createElement('div');
-            notification.className = 'purchase-notification';
-            notification.innerHTML = `
+            purchaseNotificationCount++;
+            const nombre = getRandomPurchaseItem(PURCHASE_DATA.nombres);
+            const curso = getRandomPurchaseItem(PURCHASE_DATA.cursos);
+            const ciudad = getRandomPurchaseItem(PURCHASE_DATA.ciudades);
+
+            console.log(`📢 Notification #${purchaseNotificationCount}: ${nombre} - ${curso} (${ciudad})`);
+
+            const div = document.createElement('div');
+            div.className = 'purchase-notification';
+            div.innerHTML = `
                 <button class="purchase-notification-close">✕</button>
                 <div class="purchase-notification-icon">🎉</div>
                 <div class="purchase-notification-name">${nombre}</div>
@@ -4304,73 +4291,53 @@
                 <div class="purchase-notification-location">Desde: ${ciudad}</div>
             `;
 
-            document.body.appendChild(notification);
+            document.body.appendChild(div);
 
-            // Close button handler
-            const closeBtn = notification.querySelector('.purchase-notification-close');
-            closeBtn.addEventListener('click', () => {
-                notification.classList.add('hide');
-                setTimeout(() => {
-                    notification.remove();
-                }, 400);
+            div.querySelector('.purchase-notification-close').addEventListener('click', () => {
+                div.classList.add('hide');
+                setTimeout(() => div.remove(), 400);
             });
 
-            // Auto-remove after 4 seconds
             setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.classList.add('hide');
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 400);
+                if (div.parentNode) {
+                    div.classList.add('hide');
+                    setTimeout(() => { if (div.parentNode) div.remove(); }, 400);
                 }
             }, 4000);
         }
 
-        // Intersection Observer: Trigger notifications when courses section becomes visible
-        const cursosSection = document.getElementById('cursos');
-        let notificationsStarted = false;
+        // Setup: cuando llegues a la sección de cursos, inicia las notificaciones
+        setTimeout(() => {
+            const cursosElement = document.getElementById('cursos');
+            console.log('📍 Buscando elemento #cursos:', cursosElement ? '✅ ENCONTRADO' : '❌ NO ENCONTRADO');
 
-        if (cursosSection) {
-            console.log('Cursos section found, setting up observer');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    console.log('Observer callback - isIntersecting:', entry.isIntersecting, 'ratio:', entry.intersectionRatio);
-                    if (entry.isIntersecting && !notificationsStarted) {
-                        notificationsStarted = true;
-                        console.log('✅ Cursos section visible - Starting notifications NOW');
+            if (!cursosElement) return;
 
-                        // First notification when courses section appears
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting && !purchaseNotificationStarted) {
+                        purchaseNotificationStarted = true;
+                        console.log('✅ Sección de cursos visible - ACTIVANDO NOTIFICACIONES');
+
                         showPurchaseNotification();
-                        console.log('First notification shown');
 
-                        // Subsequent notifications every 15 seconds
-                        notificationInterval = setInterval(() => {
-                            console.log('Interval check - notificationCount:', notificationCount, 'MAX:', MAX_NOTIFICATIONS);
-                            if (notificationCount >= MAX_NOTIFICATIONS) {
-                                clearInterval(notificationInterval);
-                                console.log('✅ Max notifications reached');
+                        purchaseNotificationInterval = setInterval(() => {
+                            if (purchaseNotificationCount >= 4) {
+                                clearInterval(purchaseNotificationInterval);
                                 return;
                             }
                             showPurchaseNotification();
-                        }, 15000);
+                        }, 10000); // 10 segundos
 
-                        // Disconnect observer after first trigger
                         observer.disconnect();
-                        console.log('Observer disconnected');
                     }
-                });
-            }, {
-                threshold: [0, 0.1, 0.25, 0.5],
-                rootMargin: '0px'
-            });
+                },
+                { threshold: 0.1 }
+            );
 
-            observer.observe(cursosSection);
-            console.log('Observer started');
-        } else {
-            console.log('❌ Cursos section NOT found');
-        }
+            observer.observe(cursosElement);
+            console.log('👁️ Intersection Observer activo');
+        }, 500); // Esperar 500ms para asegurar que el DOM está listo
     </script>
 
 </body>
