@@ -2028,6 +2028,56 @@
             transform: scale(0.98);
         }
 
+        .community-groups {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        @media (min-width: 600px) {
+            .community-groups {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+
+        .community-group-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(43, 127, 133, 0.1), rgba(43, 127, 133, 0.05));
+            border: 2px solid #2b7f85;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #2b7f85;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .community-group-btn:hover {
+            background: linear-gradient(135deg, #2b7f85, #206b71);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(43, 127, 133, 0.25);
+            border-color: #206b71;
+        }
+
+        .group-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .group-desc {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
         /* Mobile adjustments */
         @media (max-width: 480px) {
             .exit-intent-container {
@@ -2675,44 +2725,54 @@
             <div class="exit-intent-content">
                 <div class="exit-intent-header">
                     <h2 class="exit-intent-title">Antes de irte...</h2>
-                    <p class="exit-intent-subtitle">Acceso a comunidad + acompañamiento Aurora</p>
+                    <p class="exit-intent-subtitle">Únete a una comunidad de estudiantes y profesionales</p>
                 </div>
 
                 <div class="exit-intent-main">
                     <p class="exit-intent-description">
-                        Conecta con miles de estudiantes que ya aprobaron EFIP. Metodología Aurora, grupo privado de tu carrera, y apoyo de profes en tiempo real.
+                        Acceso a grupos privados donde compartimos material, resolvemos dudas, dictamos clases gratuitas y capacitaciones especializadas. Estudiantes y profesionales que te bancan, te apoyan y están en la misma que vos. Completamente gratuito.
                     </p>
 
                     <div class="exit-intent-features">
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
-                            <span class="feature-text">Comunidad activa de tu carrera</span>
+                            <span class="feature-text">Estudiantes y profesionales que te bancan</span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
-                            <span class="feature-text">Metodología Aurora comprobada</span>
+                            <span class="feature-text">Material de estudio e interés profesional</span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
-                            <span class="feature-text">Resolución de dudas en vivo</span>
+                            <span class="feature-text">Resolución de dudas frecuentes</span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">✓</span>
-                            <span class="feature-text">Acompañamiento personalizado</span>
+                            <span class="feature-text">Clases gratuitas y capacitaciones especializadas</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="exit-intent-actions">
-                    <button id="openCommunityModal" class="exit-intent-btn exit-intent-btn-primary">
-                        Sumate a la comunidad
-                    </button>
-                    <a href="https://wa.me/542634621570?text=Hola%20Estudiantes%20Digitales,%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="exit-intent-btn exit-intent-btn-secondary">
-                        Consultar directamente
+                <div id="communityGroups" class="community-groups">
+                    <a href="https://chat.whatsapp.com/IQPnKpSFVFqDh309MDdpQN" target="_blank" rel="noopener noreferrer" class="community-group-btn">
+                        <span class="group-title">EFIP Derecho 1</span>
+                        <span class="group-desc">Para estudiantes de Derecho EFIP 1</span>
+                    </a>
+                    <a href="https://chat.whatsapp.com/KvanHQC6zMmLttDro7XFNY" target="_blank" rel="noopener noreferrer" class="community-group-btn">
+                        <span class="group-title">EFIP Derecho 2</span>
+                        <span class="group-desc">Para estudiantes de Derecho EFIP 2</span>
+                    </a>
+                    <a href="https://chat.whatsapp.com/IE69fAcTTd9Jd2UMoHPJNc" target="_blank" rel="noopener noreferrer" class="community-group-btn">
+                        <span class="group-title">EFIP Contabilidad</span>
+                        <span class="group-desc">Para estudiantes de Contabilidad EFIP 1</span>
+                    </a>
+                    <a href="https://chat.whatsapp.com/HAbaQMhZf1oCwSynTWNmzb" target="_blank" rel="noopener noreferrer" class="community-group-btn">
+                        <span class="group-title">EFIP Administración</span>
+                        <span class="group-desc">Para estudiantes de Administración EFIP 1</span>
                     </a>
                 </div>
 
-                <button id="skipExitModal" class="exit-intent-skip">No, gracias</button>
+                <button id="skipExitModal" class="exit-intent-skip">Cerrar</button>
             </div>
         </div>
     </div>
@@ -3066,7 +3126,6 @@
         const exitIntentModal = document.getElementById('exitIntentModal');
         const closeExitModal = document.getElementById('closeExitModal');
         const skipExitModal = document.getElementById('skipExitModal');
-        const openCommunityModal = document.getElementById('openCommunityModal');
         let exitIntentShown = false;
         let scrollTriggered = false;
         let timeTriggered = false;
@@ -3090,10 +3149,6 @@
         });
 
         skipExitModal.addEventListener('click', () => {
-            exitIntentModal.classList.remove('show');
-        });
-
-        openCommunityModal.addEventListener('click', () => {
             exitIntentModal.classList.remove('show');
         });
 
