@@ -4277,7 +4277,10 @@
 
         let notificationShown = false;
         let firstNotificationTimeout;
+        let notificationCount = 0;
+        let notificationInterval;
         const isMobile = window.innerWidth < 768;
+        const MAX_NOTIFICATIONS = 4;
 
         function getRandomItem(array) {
             return array[Math.floor(Math.random() * array.length)];
@@ -4285,6 +4288,7 @@
 
         function showPurchaseNotification() {
             notificationShown = true;
+            notificationCount++;
             const nombre = getRandomItem(purchaseData.nombres);
             const curso = getRandomItem(purchaseData.cursos);
             const ciudad = getRandomItem(purchaseData.ciudades);
@@ -4324,13 +4328,19 @@
             }, 4000);
         }
 
-        // First notification at 10 seconds, then every 25 seconds
-        // Mobile: First at 10 seconds OR on user exit attempt (whichever comes first)
+        // First notification at 10 seconds, then every 10 seconds
+        // Max 4 notifications total
         const initialDelay = 10000;
 
         firstNotificationTimeout = setTimeout(() => {
             showPurchaseNotification();
-            setInterval(showPurchaseNotification, 25000);
+            notificationInterval = setInterval(() => {
+                if (notificationCount >= MAX_NOTIFICATIONS) {
+                    clearInterval(notificationInterval);
+                    return;
+                }
+                showPurchaseNotification();
+            }, 10000);
         }, initialDelay);
 
         // Mobile: Show notification on exit/back attempt
