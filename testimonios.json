@@ -1,0 +1,66 @@
+{
+  "testimonios": [
+    {
+      "id": 1,
+      "nombre": "Andrea Cabutti",
+      "curso": "EFIP 2 Abogacía",
+      "rating": 5,
+      "testimonio": "Quedé fascinada con la metodología. Me recibí en el primer intento.",
+      "aprobado": true,
+      "fecha": "2026-07-15"
+    },
+    {
+      "id": 2,
+      "nombre": "Ale Mijoc",
+      "curso": "EFIP 2 Abogacía",
+      "rating": 5,
+      "testimonio": "Fue clave para aplicar la teoría a lo práctico. Lo recomiendo 100%.",
+      "aprobado": true,
+      "fecha": "2026-07-10"
+    },
+    {
+      "id": 3,
+      "nombre": "Cristian Álvarez",
+      "curso": "EFIP II Defensa",
+      "rating": 5,
+      "testimonio": "Me recibí de abogado gracias a cada uno del grupo. Acompañamiento real.",
+      "aprobado": true,
+      "fecha": "2026-07-05"
+    },
+    {
+      "id": 4,
+      "nombre": "Eve Silberstein",
+      "curso": "EFIP 2 Abogacía",
+      "rating": 5,
+      "testimonio": "Son increíbles. No solo enseñan, acompañan tu proceso.",
+      "aprobado": true,
+      "fecha": "2026-06-28"
+    },
+    {
+      "id": 5,
+      "nombre": "María Fernanda",
+      "curso": "EFIP 1 Abogacía",
+      "rating": 5,
+      "testimonio": "Eternamente agradecida. Cambió mi forma de estudiar.",
+      "aprobado": true,
+      "fecha": "2026-06-20"
+    }
+  ],
+  "pendientes": [
+    {
+      "id": "pending_001",
+      "nombre": "[Pendiente de aprobación]",
+      "curso": "[Nuevo testimonio]",
+      "rating": 0,
+      "testimonio": "[Será visible después de aprobación]",
+      "aprobado": false,
+      "fecha": "2026-08-06"
+    }
+  ],
+  "configuracion": {
+    "descuento": "30%",
+    "descuentoTexto": "Recibe 30% de descuento en tu próximo curso o masterclass",
+    "emailContacto": "hola@estudiantesdigitales.com",
+    "formularioUrl": "https://formspree.io/f/YOUR_FORM_ID"
+  }
+}
