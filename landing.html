@@ -4333,29 +4333,43 @@
         let notificationsStarted = false;
 
         if (cursosSection) {
+            console.log('Cursos section found, setting up observer');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
+                    console.log('Observer callback - isIntersecting:', entry.isIntersecting, 'ratio:', entry.intersectionRatio);
                     if (entry.isIntersecting && !notificationsStarted) {
                         notificationsStarted = true;
-                        console.log('Cursos section visible - Starting notifications');
+                        console.log('✅ Cursos section visible - Starting notifications NOW');
+
                         // First notification when courses section appears
                         showPurchaseNotification();
+                        console.log('First notification shown');
+
                         // Subsequent notifications every 15 seconds
                         notificationInterval = setInterval(() => {
+                            console.log('Interval check - notificationCount:', notificationCount, 'MAX:', MAX_NOTIFICATIONS);
                             if (notificationCount >= MAX_NOTIFICATIONS) {
                                 clearInterval(notificationInterval);
-                                console.log('Max notifications reached');
+                                console.log('✅ Max notifications reached');
                                 return;
                             }
                             showPurchaseNotification();
                         }, 15000);
+
                         // Disconnect observer after first trigger
                         observer.disconnect();
+                        console.log('Observer disconnected');
                     }
                 });
-            }, { threshold: 0.01, rootMargin: '100px 0px 100px 0px' });
+            }, {
+                threshold: [0, 0.1, 0.25, 0.5],
+                rootMargin: '0px'
+            });
 
             observer.observe(cursosSection);
+            console.log('Observer started');
+        } else {
+            console.log('❌ Cursos section NOT found');
         }
     </script>
 
