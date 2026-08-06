@@ -1278,7 +1278,75 @@
         }
 
         /* EXPERTOS - FORMACIÓN CONSTANTE */
+        .experts-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experts-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(5, 5, 5, 0.8) 0%, rgba(43, 127, 133, 0.15) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Stars Background */
+        .experts-section-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .stars-layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .stars-1 {
+            background-image:
+                radial-gradient(1px 1px at 10% 10%, #fff, transparent),
+                radial-gradient(1px 1px at 30% 20%, #fff, transparent),
+                radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+                radial-gradient(1px 1px at 70% 30%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 10%, #fff, transparent);
+            background-size: 200px 200px;
+            animation: twinkle-stars 3s ease-in-out infinite;
+        }
+
+        .stars-2 {
+            background-image:
+                radial-gradient(1.5px 1.5px at 20% 40%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 60% 85%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 85% 65%, #fff, transparent);
+            background-size: 300px 300px;
+            animation: twinkle-stars 5s ease-in-out infinite 1s;
+        }
+
+        .moon {
+            position: absolute;
+            top: 5%;
+            right: 8%;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 12px 12px 0 0 #fdfbd3;
+            filter: drop-shadow(0 0 12px rgba(253, 251, 211, 0.3));
+            z-index: 2;
+        }
+
+        @keyframes twinkle-stars {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.2; }
+        }
+
         .experts-bar {
+            position: relative;
+            z-index: 3;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1286,9 +1354,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 12px;
             border: 1px solid rgba(43, 127, 133, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .live-indicator {
@@ -2822,7 +2891,12 @@
     </section>
 
     <!-- FORMACIÓN CONSTANTE CON EXPERTOS -->
-    <section class="section" style="padding: 2rem 1.5rem; background: linear-gradient(90deg, rgba(43, 127, 133, 0.05), rgba(242, 121, 121, 0.05));">
+    <section class="section experts-section" style="padding: 2rem 1.5rem; position: relative;">
+        <div class="experts-section-bg">
+            <div class="stars-layer stars-1"></div>
+            <div class="stars-layer stars-2"></div>
+            <div class="moon"></div>
+        </div>
         <div class="experts-bar">
             <div class="live-indicator">
                 <div class="pulse-container">
