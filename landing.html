@@ -2822,9 +2822,10 @@
             }
 
             .help-btn-main {
-                width: 48px;
+                width: auto;
                 height: 48px;
-                font-size: 1.5rem;
+                font-size: 0.65rem;
+                padding: 0 12px;
             }
 
             .help-menu {
@@ -4289,13 +4290,13 @@
             }, 4000);
         }
 
-        // Desktop: First notification at 15 seconds
-        // Mobile: First notification at 50 seconds OR on user exit attempt
-        const initialDelay = isMobile ? 50000 : 15000;
+        // First notification at 10 seconds, then every 25 seconds
+        // Mobile: First at 10 seconds OR on user exit attempt (whichever comes first)
+        const initialDelay = 10000;
 
         firstNotificationTimeout = setTimeout(() => {
             showPurchaseNotification();
-            setInterval(showPurchaseNotification, 30000);
+            setInterval(showPurchaseNotification, 25000);
         }, initialDelay);
 
         // Mobile: Show notification on exit/back attempt
