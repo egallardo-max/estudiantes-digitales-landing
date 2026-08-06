@@ -4024,7 +4024,7 @@
         window.addEventListener('scroll', () => {
             if (!scrollTriggered && !exitIntentShown) {
                 const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                if (scrollPercent >= 60) {
+                if (scrollPercent >= 80) {
                     scrollTriggered = true;
                     showExitIntentModal();
                 }
