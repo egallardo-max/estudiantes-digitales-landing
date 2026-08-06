@@ -44,6 +44,15 @@
       "testimonio": "Eternamente agradecida. Cambió mi forma de estudiar.",
       "aprobado": true,
       "fecha": "2026-06-20"
+    },
+    {
+      "id": 6,
+      "nombre": "Eugenio Gallardo",
+      "curso": "EFIP 2 Derecho",
+      "rating": 5,
+      "testimonio": "prueba",
+      "aprobado": true,
+      "fecha": "2026-08-06"
     }
   ],
   "pendientes": [
