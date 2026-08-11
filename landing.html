@@ -742,9 +742,10 @@
             .course-card {
                 display: flex !important;
                 flex-direction: row !important;
-                min-height: 140px;
-                padding: 0.6rem;
-                align-items: center;
+                min-height: 130px;
+                padding: 0.8rem;
+                align-items: flex-start;
+                gap: 0.8rem;
             }
 
             .course-card > a {
@@ -753,53 +754,85 @@
             }
 
             .course-visual {
-                width: 120px !important;
-                height: 120px !important;
-                min-width: 120px;
+                width: 100px !important;
+                height: 100px !important;
+                min-width: 100px;
                 margin-bottom: 0 !important;
-                margin-right: 1rem;
+                margin-right: 0;
                 border-radius: 10px;
             }
 
             .course-content {
                 padding: 0 !important;
                 flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .course-content-header {
+                margin-bottom: 0.2rem;
             }
 
             .course-content h3 {
-                font-size: 1rem;
-                margin-bottom: 0.4rem;
+                font-size: 0.95rem;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+                line-height: 1.2;
+                color: var(--text-dark);
+            }
+
+            .course-content h3 a {
+                color: var(--text-dark);
+                text-decoration: none;
+                display: block;
+            }
+
+            .course-content h3 a:hover {
+                color: var(--primary);
             }
 
             .course-features {
-                margin-bottom: 0.4rem;
+                display: flex;
+                gap: 0.3rem;
+                margin: 0.3rem 0;
+                font-size: 0.9rem;
+            }
+
+            .course-feature {
+                font-size: 0.9rem;
             }
 
             .course-content > p {
-                font-size: 0.8rem;
-                margin-bottom: 0.4rem;
-                display: none;
+                font-size: 0.75rem;
+                margin: 0;
+                color: var(--gray);
+                line-height: 1.3;
+                display: block;
             }
 
             .course-content > a {
-                font-size: 0.85rem;
-                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+                margin-top: 0.4rem;
+                width: fit-content;
             }
 
             .course-stars {
-                top: 0.6rem;
-                right: 0.6rem;
-                gap: 0.25rem;
+                top: 0.3rem;
+                right: 0.3rem;
+                gap: 0.2rem;
             }
 
             .stars-rating {
-                font-size: 0.7rem;
-                letter-spacing: 0.3px;
+                font-size: 0.65rem;
+                letter-spacing: 0.2px;
             }
 
             .students-count {
-                font-size: 0.6rem;
-                padding: 0.15rem 0.4rem;
+                font-size: 0.55rem;
+                padding: 0.1rem 0.3rem;
             }
         }
 
