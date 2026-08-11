@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Visual: Mejorar Imágenes en Mobile - Estudiantes Digitales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2b7f85;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .problem-section {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .problem-section h2 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-header {
+            background: linear-gradient(135deg, #2b7f85, #1f5a5e);
+            color: white;
+            padding: 1rem;
+            font-weight: 700;
+        }
+
+        .solution-body {
+            padding: 1.5rem;
+        }
+
+        .solution-body h3 {
+            margin-bottom: 1rem;
+            color: #2b7f85;
+        }
+
+        .preview-area {
+            background: #f9f9f9;
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .mobile-card {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 38% 1fr;
+            gap: 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: 140px;
+        }
+
+        .mobile-card.option2 {
+            height: 160px;
+        }
+
+        .mobile-card.option3 {
+            grid-template-columns: 50% 1fr;
+        }
+
+        .card-image {
+            background: linear-gradient(135deg, #2b7f85, #1f5a5e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        .card-image.cover {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-image.contain {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .card-content {
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-price {
+            font-weight: 700;
+            color: #2b7f85;
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-button {
+            background: #2b7f85;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .code-remove {
+            color: #ce9178;
+            background-color: rgba(206, 145, 120, 0.1);
+            padding: 0.2rem 0.4rem;
+            text-decoration: line-through;
+        }
+
+        .code-add {
+            color: #6a9955;
+            padding: 0.2rem 0.4rem;
+        }
+
+        .highlight {
+            background-color: #f5d547;
+            color: #333;
+            padding: 0.2rem 0.4rem;
+            border-radius: 2px;
+            font-weight: 700;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pros, .cons {
+            padding: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .pros {
+            background: #d4edda;
+            border-left: 3px solid #28a745;
+        }
+
+        .cons {
+            background: #f8d7da;
+            border-left: 3px solid #dc3545;
+        }
+
+        .pros h4, .cons h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pros h4 {
+            color: #155724;
+        }
+
+        .cons h4 {
+            color: #721c24;
+        }
+
+        .pros ul, .cons ul {
+            font-size: 0.85rem;
+            list-position: inside;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 0.3rem;
+        }
+
+        .recommendation {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .recommendation h2 {
+            color: #0c5460;
+            margin-bottom: 0.5rem;
+        }
+
+        .recommendation p {
+            color: #0c5460;
+            line-height: 1.6;
+        }
+
+        .steps {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .steps h2 {
+            color: #2b7f85;
+            margin-bottom: 1rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: #2b7f85;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .step-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Guía: Mejorar Imágenes de Tarjetas en Mobile</h1>
+        <p class="subtitle">Para Bruno - Cómo arreglar imágenes desajustadas en la versión mobile de Estudiantes Digitales</p>
+
+        <div class="problem-section">
+            <h2>⚠️ Problema Actual</h2>
+            <p>En mobile (375px - 480px), las imágenes de las tarjetas de productos se ven <strong>desajustadas o cortadas</strong> porque:</p>
+            <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+                <li>Las imágenes tienen diferentes proporciones de aspecto</li>
+                <li>El contenedor tiene altura fija (100%)</li>
+                <li><code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">object-fit: cover</code> está cortando partes importantes</li>
+            </ul>
+        </div>
+
+        <div class="recommendation">
+            <h2>✅ Recomendación</h2>
+            <p><strong>Usa OPCIÓN 1 (Cambiar `cover` a `contain`)</strong> - Es la más segura, menos invasiva y da los mejores resultados sin afectar el diseño.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <!-- OPCIÓN 1 -->
+            <div class="solution-card">
+                <div class="solution-header">OPCIÓN 1: Usar contain (RECOMENDADO) ⭐</div>
+                <div class="solution-body">
+                    <h3>Cambiar background-size</h3>
+
+                    <div class="preview-area">
+                        <div class="mobile-card">
+                            <div class="card-image contain" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 140%22><rect fill=%22%232b7f85%22 width=%22300%22 height=%22140%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Imagen Completa</text></svg>');">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <div class="card-title">EFIP 1 Abogacía</div>
+                                    <div class="card-price">$119.990 ARS</div>
+                                </div>
+                                <button class="card-button">Ver detalles →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Cambios en el código:</h4>
+                    <div class="code-block">
+background-size: <span class="code-remove">cover</span>  →  <span class="code-add">contain</span>
+background-repeat: no-repeat;  ← AGREGAR
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Imagen completa, sin cortes</li>
+                                <li>Mantiene proporción</li>
+                                <li>Cambio simple (1 línea)</li>
+                                <li>No afecta otros breakpoints</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Puede haber espacio blanco</li>
+                                <li>Imagen más pequeña visualmente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPCIÓN 2 -->
+            <div class="solution-card">
+                <div class="solution-header">OPCIÓN 2: Aumentar altura</div>
+                <div class="solution-body">
+                    <h3>Dar más espacio a la tarjeta</h3>
+
+                    <div class="preview-area">
+                        <div class="mobile-card option2">
+                            <div class="card-image cover" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 160%22><rect fill=%22%232b7f85%22 width=%22300%22 height=%22160%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>Más Espacio</text></svg>');">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <div class="card-title">EFIP 1 Abogacía</div>
+                                    <div class="card-price">$119.990 ARS</div>
+                                </div>
+                                <button class="card-button">Ver detalles →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Cambios en el código:</h4>
+                    <div class="code-block">
+.course-card {
+    min-height: <span class="code-remove">140px</span>;  →  <span class="code-add">160px</span>;
+}
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Más espacio para imagen</li>
+                                <li>Menos cortada con cover</li>
+                                <li>Se ve más grande</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Tarjeta más grande</li>
+                                <li>Menos cursos visibles</li>
+                                <li>Usuario debe scrollear más</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPCIÓN 3 -->
+            <div class="solution-card">
+                <div class="solution-header">OPCIÓN 3: Ampliar imagen</div>
+                <div class="solution-body">
+                    <h3>Cambiar proporción imagen/contenido</h3>
+
+                    <div class="preview-area">
+                        <div class="mobile-card option3">
+                            <div class="card-image cover" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 140%22><rect fill=%22%232b7f85%22 width=%22300%22 height=%22140%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>50% Imagen</text></svg>');">
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <div class="card-title">EFIP</div>
+                                    <div class="card-price">$119.990</div>
+                                </div>
+                                <button class="card-button">Ver →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Cambios en el código:</h4>
+                    <div class="code-block">
+.course-card {
+    grid-template-columns: <span class="code-remove">38% 1fr</span>;  →  <span class="code-add">50% 1fr</span>;
+}
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Ventajas</h4>
+                            <ul>
+                                <li>Imagen ocupa 50%</li>
+                                <li>Más visible</li>
+                                <li>Balance visual</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Desventajas</h4>
+                            <ul>
+                                <li>Contenido se comprime</li>
+                                <li>Texto puede cortarse</li>
+                                <li>Más radical</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASOS -->
+        <div class="steps">
+            <h2>🎯 Pasos para Implementar (OPCIÓN 1)</h2>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Abre landing.html</h3>
+                    <p>En tu editor de código (VS Code, Sublime, etc.)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Ve a la línea ~770</h3>
+                    <p>Presiona Ctrl+G (o Cmd+G en Mac) e ingresa 770</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Busca @media (max-width: 768px)</h3>
+                    <p>Busca la sección de mobile (Ctrl+F)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Localiza .course-visual</h3>
+                    <p>Dentro de ese media query, busca el bloque <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">.course-visual</code></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Cambia background-size</h3>
+                    <p>Reemplaza <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">background-size: cover</code> por <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">background-size: contain</code></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>Agrega background-repeat</h3>
+                    <p>Añade una nueva línea: <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">background-repeat: no-repeat;</code></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3>Guarda el archivo</h3>
+                    <p>Ctrl+S (o Cmd+S en Mac)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3>Prueba en mobile</h3>
+                    <p>Abre en navegador → Presiona F12 → Selecciona vista mobile (375px) → Scrollea a cursos</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                    <h3>Sube a Hostinger</h3>
+                    <p>Via SFTP o File Manager → Sube el archivo landing.html modificado</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="recommendation">
+            <h2>✅ Checklist Final</h2>
+            <p>Verifica que se cumplan estos puntos:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.8rem;">
+                <li>Imagen visible sin cortes en mobile</li>
+                <li>Mantiene proporción (no distorsionada)</li>
+                <li>Se ve bien en 375px, 480px y 768px</li>
+                <li>Contenido de texto no desaparece</li>
+                <li>Botón "Ver detalles" sigue visible</li>
+                <li>Precio se ve correctamente</li>
+                <li>En desktop (1024px+) sigue siendo grid de 3 columnas</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>¿Dudas?</strong> Contacta a Egallardo</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Última actualización: 2026-08-11</p>
+        </div>
+    </div>
+</body>
+</html>
