@@ -740,18 +740,50 @@
 
         @media (max-width: 480px) {
             .course-card {
-                flex-direction: row;
+                display: flex !important;
+                flex-direction: row !important;
                 min-height: 140px;
                 padding: 0.6rem;
+                align-items: center;
+            }
+
+            .course-card > a {
+                display: flex;
+                flex-shrink: 0;
             }
 
             .course-visual {
-                width: 120px;
-                height: 120px;
+                width: 120px !important;
+                height: 120px !important;
                 min-width: 120px;
-                margin-bottom: 0;
-                margin-right: 0.8rem;
+                margin-bottom: 0 !important;
+                margin-right: 1rem;
                 border-radius: 10px;
+            }
+
+            .course-content {
+                padding: 0 !important;
+                flex: 1;
+            }
+
+            .course-content h3 {
+                font-size: 1rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .course-features {
+                margin-bottom: 0.4rem;
+            }
+
+            .course-content > p {
+                font-size: 0.8rem;
+                margin-bottom: 0.4rem;
+                display: none;
+            }
+
+            .course-content > a {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
             }
 
             .course-stars {
