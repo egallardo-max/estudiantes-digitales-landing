@@ -575,7 +575,7 @@
 
         @media (max-width: 480px) {
             .courses-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 gap: 0.9rem;
             }
         }
@@ -739,6 +739,21 @@
         }
 
         @media (max-width: 480px) {
+            .course-card {
+                flex-direction: row;
+                min-height: 140px;
+                padding: 0.6rem;
+            }
+
+            .course-visual {
+                width: 120px;
+                height: 120px;
+                min-width: 120px;
+                margin-bottom: 0;
+                margin-right: 0.8rem;
+                border-radius: 10px;
+            }
+
             .course-stars {
                 top: 0.6rem;
                 right: 0.6rem;
